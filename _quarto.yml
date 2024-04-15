@@ -2,14 +2,29 @@ project:
   type: website
 
 website:
-  title: "profile-page"
+  title: "Ashlynn Lu"
+  bread-crumbs: true
+  back-to-top-navigation: true
+  page-footer: "© Ashlynn Lu 2024"
+  reader-mode: true
+  repo-url: https://github.com/AshlynnLu/profile-page
+  repo-actions: [edit, issue]
+  
   navbar:
+    left:
+      - text: "Research"
+        file: research.qmd
+      - text: "Photo"
+        file: photo.qmd
+      - text: "About"
+        file: about.qmd
     right:
-      - about.qmd
       - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+        href: https://github.com/AshlynnLu
+      - icon: linkedin
+        href: https://www.linkedin.com/in/kexin-lu-246256228
+      - icon: facebook
+        href: https://www.facebook.com/kexin.lu.370
 format:
   html:
     theme: cosmo

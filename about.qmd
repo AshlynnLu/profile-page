@@ -4,16 +4,30 @@ image: profile.jpg
 about:
   template: jolla
   links:
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com
+    - icon: facebook
+      text: Facebook
+      href: https://www.facebook.com/kexin.lu.370
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com
+      href: https://www.linkedin.com/in/kexin-lu-246256228
     - icon: github
       text: Github
-      href: https://github.com
-
+      href: https://github.com/AshlynnLu
+engine: knitr
 ---
 
-About this blog
+Hi, I am Kexin Lu, you can call me Ashlynn. I am a MSc statistic student at [Imperial College London](https://www.imperial.ac.uk).
+
+## Interest
+
+My research interests are in the field of data science and AI. 
+
+## Skills
+
+I have learnt programming languages such as Python, R, Quarto, an MySQL.
+
+I am currently self-studying Japanese.
+
+## Hobby
+
+I like gaming `r emo::ji("controller")`, playing guitar `r emo::ji("guitar")`, photography `r emo::ji("camera")`. You can find some of my photos [here](photo.qmd).

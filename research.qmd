@@ -1,5 +1,5 @@
 ---
-title: "profile-page"
+title: "Research"
 listing:
   contents: posts
   sort: "date desc"
