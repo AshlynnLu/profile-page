@@ -5,8 +5,6 @@ website:
   title: "Ashlynn Lu"
   bread-crumbs: true
   back-to-top-navigation: true
-  page-footer: "© Ashlynn Lu 2024"
-  reader-mode: true
   repo-url: https://github.com/AshlynnLu/profile-page
   repo-actions: [edit, issue]
   
@@ -26,6 +24,19 @@ website:
       - icon: facebook
         href: https://www.facebook.com/kexin.lu.370
       - text: " "
+      
+  page-footer:
+      background: light
+      border: true
+      left: "© Ashlynn Lu 2024"
+      center: ""
+      right:
+        - icon: github
+          href: https://github.com/AshlynnLu
+        - icon: linkedin
+          href: https://www.linkedin.com/in/kexin-lu-246256228
+        - icon: facebook
+          href: https://www.facebook.com/kexin.lu.370
 format:
   html:
     theme: cosmo

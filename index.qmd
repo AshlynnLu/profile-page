@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "Hi there!"
 image: profile.jpg
 about:
   template: jolla
@@ -16,19 +16,13 @@ about:
 engine: knitr
 ---
 
-Hi, I am Kexin Lu, you can call me Ashlynn. 
+My name is Kexin Lu, you can call me Ashlynn. 
 
 I am a MSc statistic student at [Imperial College London](https://www.imperial.ac.uk).
 
 ## Interest
 
 My research interests are in the field of data science and AI. 
-
-## Skills
-
-I have learnt programming languages such as Python, R, Quarto, an MySQL.
-
-I am currently self-studying Japanese.
 
 ## Hobby
 

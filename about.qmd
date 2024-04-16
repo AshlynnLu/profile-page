@@ -1,8 +1,9 @@
 ---
 title: "About"
-image: profile.jpg
 about:
-  template: jolla
+  id: hero-heading
+  template: trestles
+  image: profile.jpg
   links:
     - icon: facebook
       text: Facebook
@@ -16,18 +17,45 @@ about:
 engine: knitr
 ---
 
-Hi, I am Kexin Lu, you can call me Ashlynn. I am a MSc statistic student at [Imperial College London](https://www.imperial.ac.uk).
+:::{#hero-heading}
 
-## Interest
+Ashlynn Lu is a statistics and data science postgraduate student.
 
-My research interests are in the field of data science and AI. 
+She is currently studying at Imperial College London.
+
+When not innovating on data analysis, Ashlynn enjoys spending time gaming, playing guitar and taking pictures.
+
+## Education
+
+Imperial College London | London, UK
+Statistics (Data Science) (MSc) | Sept 2023 – Sep 2024 (ongoing)
+
+The University of Edinburgh | Edinburgh, UK
+Mathematics and Statistics (BSc Hons) | Sept 2019 – May 2023
+
+## Projects
+
+Exploration into the subjective interpretation of statistical information via the use of visual displays of data | R | Sept 2022 – Mar 2023
+
+Investigating the impact of age and sex on guillemot survival probabilities | R | July 2022 – Aug 2022
+
+Investigating the pattern of the stop and search in City of London | R | Oct 2019 – Nov 2019
+
+## Awards
+
+The Lawley Prize | 2023
+The University of Edinburgh | Edinburgh, UK
+
+The College Vacation Scholarship | 2022
+The University of Edinburgh | Edinburgh, UK
 
 ## Skills
 
-I have learnt programming languages such as Python, R, Quarto, an MySQL.
+Programming languages & Analytical software: Python, R, SQL, Xpress, STATA, SPSS, Microsoft Office: Excel, PowerPoint, etc.
 
-I am currently self-studying Japanese.
+Languages: Fluent English, native-level Chinese, fluent Japanese
 
-## Hobby
+Other skills: Video editing, illustration, new media operation
 
-I like gaming `r emo::ji("controller")`, playing guitar `r emo::ji("guitar")`, photography `r emo::ji("camera")`. You can find some of my photos [here](photo.qmd).
+:::
+
