@@ -25,6 +25,7 @@ website:
         href: https://www.linkedin.com/in/kexin-lu-246256228
       - icon: facebook
         href: https://www.facebook.com/kexin.lu.370
+      - text: " "
 format:
   html:
     theme: cosmo

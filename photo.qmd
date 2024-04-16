@@ -1,0 +1,31 @@
+---
+title: "Photo gallery"
+format: html
+filters:
+   - lightbox
+lightbox: auto
+---
+
+::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
+
+![](photo/1.jpg){group="my-gallery"}
+
+![](photo/2.jpg){group="my-gallery"}
+
+![](photo/3.jpg){group="my-gallery"}
+
+![](photo/4.jpg){group="my-gallery"}
+
+![](photo/5.jpg){group="my-gallery"}
+
+![](photo/6.jpg){group="my-gallery"}
+
+![](photo/7.jpg){group="my-gallery"}
+
+![](photo/8.jpg){group="my-gallery"}
+
+![](photo/9.jpg){group="my-gallery"}
+![](photo/10.jpg){group="my-gallery"}
+![](photo/11.jpg){group="my-gallery"}
+![](photo/12.jpg){group="my-gallery"}
+:::
