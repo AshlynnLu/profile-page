@@ -10,7 +10,7 @@ website:
   
   navbar:
     left:
-      - text: "Research"
+      - text: "Writing"
         file: research.qmd
       - text: "Photo"
         file: photo.qmd

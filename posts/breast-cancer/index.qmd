@@ -6,7 +6,7 @@ categories: [analysis]
 image: "distribution.png"
 ---
 
-we are going to explore the Breast Cancer Wisconsin Data Set, which contains 30 features extracted from a digitised image of a fine needle aspirate of 569 breast masses, and each breast mass is associated to a diagnosis: malignant (M) or benign (B). So we have $n=569$ observations of $d = 30$ covariates, denoted as $X \in \mathbb{R}^{n \times d}$, along with the diagnosis. We have 212 malignant and 357 benign cases in the dataset, which is well-balanced. Our objection is to classify whether a breast mass is malignant or benign based on the extracted features, so our response of interest is then a binary variable denoted as $y$. We define $y$ to be 1 if the breast mass is malignant, and 0 otherwise. So we have $y \in \{0, 1\}$. All the features in this dataset have been normalised before interpretation.
+In this article, we explore into the Breast Cancer Wisconsin Data Set, a comprehensive compilation of 30 features from 569 breast masses, aimed at distinguishing malignant from benign cases using advanced classification techniques.
 
 We will use three classifiers to classify whether a breast mass is malignant or benign: a logistic regression, a k-nearest neighbours classifier (KNN), and a Naive Bayes classifier.
 
