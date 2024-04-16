@@ -39,7 +39,7 @@ website:
           href: https://www.facebook.com/kexin.lu.370
 format:
   html:
-    theme: cosmo
+    theme: sandstone
     css: styles.css
 
 
