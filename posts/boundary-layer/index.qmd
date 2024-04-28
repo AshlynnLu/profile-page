@@ -4,6 +4,10 @@ author: "Ashlynn Lu"
 date: "2023-04-11"
 categories: [analysis, fluid mechanics]
 image: "half-plane.png"
+format: 
+  html:
+    toc: true
+    toc-depth: 3
 editor: 
   markdown: 
     wrap: 72

@@ -4,6 +4,10 @@ author: "Ashlynn Lu"
 date: "2024-02-02"
 categories: [analysis]
 image: "distribution.png"
+format: 
+  html:
+    toc: true
+    toc-depth: 3
 ---
 
 In this article, we explore into the Breast Cancer Wisconsin Data Set, a comprehensive compilation of 30 features from 569 breast masses, aimed at distinguishing malignant from benign cases using advanced classification techniques.

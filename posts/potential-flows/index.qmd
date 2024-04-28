@@ -4,6 +4,10 @@ author: "Ashlynn Lu"
 date: "2023-02-15"
 categories: [analysis, fluid mechanics]
 image: "wing-with-flow.png"
+format: 
+  html:
+    toc: true
+    toc-depth: 3
 ---
 
 we are going to use complex-variable methods to compute two-dimensional irrotational flows of inviscid incompressible fluids around objects. We can use complex mappings to find flows around more complicated shapes than the circular cylinder.

@@ -1,0 +1,23 @@
+---
+title: "Interactive Q-Q Plot"
+author: "Ashlynn Lu"
+date: "2023-03-17"
+categories: [data visualisation, interactive plots]
+image: "qq-example.jpg"
+format: 
+  html:
+    toc: true
+    toc-depth: 3
+    includes:
+      in_header: <link rel="stylesheet" type="text/css" href="styles.css">
+editor: 
+  markdown: 
+    wrap: 72
+runtime: shiny
+---
+
+
+
+
+<iframe src="https://lkx724.shinyapps.io/example/" width="100%" height="600"></iframe>
+

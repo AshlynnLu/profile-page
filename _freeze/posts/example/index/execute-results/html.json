@@ -1,0 +1,15 @@
+{
+  "hash": "8a7ccb4eef797c4f42869ac2403b28e5",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Interactive Q-Q Plot\"\nauthor: \"Ashlynn Lu\"\ndate: \"2023-03-17\"\ncategories: [data visualisation]\nformat: \n  html:\n    toc: true\n    toc-depth: 3\n    includes:\n      in_header: <link rel=\"stylesheet\" type=\"text/css\" href=\"styles.css\">\neditor: \n  markdown: \n    wrap: 72\nruntime: shiny\n---\n\n::: {.cell}\n\n:::\n\n\n<iframe src=\"https://lkx724.shinyapps.io/example/\" width=\"100%\" height=\"600\"></iframe>\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

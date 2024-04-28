@@ -3,6 +3,10 @@ title: "Subjective Interpretation of Statistical Information"
 author: "Ashlynn Lu"
 date: "2023-03-17"
 categories: [data visualisation]
+format: 
+  html:
+    toc: true
+    toc-depth: 3
 ---
 
 Exploration into the subjective interpretation of statistical information via the use of visual displays of data.

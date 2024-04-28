@@ -1,0 +1,10 @@
+name: example
+title:
+username: lkx724
+account: lkx724
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 11873035
+bundleId: 8545640
+url: https://lkx724.shinyapps.io/example/
+version: 1
