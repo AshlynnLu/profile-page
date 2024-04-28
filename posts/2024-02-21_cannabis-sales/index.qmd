@@ -1,8 +1,8 @@
 ---
-title: "Subjective Interpretation of Statistical Information"
+title: "Colorado Legal Cannabis Sales Report"
 author: "Ashlynn Lu"
 date: "2024-02-21"
-categories: [data visualisation, analysis]
+categories: [data visualisation, article]
 ---
 
 In Colorado, cannabis has been legal for medical use since 2000 and for recreational use since late 2012.
@@ -15,7 +15,7 @@ It is not surprising to see that retail sales quickly overtake the majority of t
 
 ![](total-sales-bar-plot.png){width="290"}
 
-![](county_sales_donut_chart.png){width="595"}
+![](county-sales-donut-chart.png){width="595"}
 
 The intention of the legalisation is to regulate and monitor the market, the active legal market proves that it has been achieved to some extent. However, another question remains, that is 'does total legalisation bring easier access to addictive goods for the public and do more damage than credit?'. This policy stays as controversial as cannabis itself.
 
