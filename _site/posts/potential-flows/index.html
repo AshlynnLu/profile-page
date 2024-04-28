@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.542">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ashlynn Lu">
+<meta name="dcterms.date" content="2023-02-15">
+
+<title>Ashlynn Lu - Complex Analysis Method for Potential Flows and the Resulting Lift</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Ashlynn Lu</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../research.html"> 
+<span class="menu-text">Writing</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../photo.html"> 
+<span class="menu-text">Photo</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/AshlynnLu"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/kexin-lu-246256228"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.facebook.com/kexin.lu.370"> <i class="bi bi-facebook" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="dropdown-header">
+ <span class="menu-text"> </span></li>
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Complex Analysis Method for Potential Flows and the Resulting Lift</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">analysis</div>
+                <div class="quarto-category">fluid mechanics</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Ashlynn Lu </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 15, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#singularities" id="toc-singularities" class="nav-link active" data-scroll-target="#singularities">Singularities</a></li>
+  <li><a href="#flow-around-wings" id="toc-flow-around-wings" class="nav-link" data-scroll-target="#flow-around-wings">Flow around wings</a></li>
+  <li><a href="#resulting-lift" id="toc-resulting-lift" class="nav-link" data-scroll-target="#resulting-lift">Resulting lift</a></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/AshlynnLu/profile-page/edit/main/posts/potential-flows/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AshlynnLu/profile-page/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p>we are going to use complex-variable methods to compute two-dimensional irrotational flows of inviscid incompressible fluids around objects. We can use complex mappings to find flows around more complicated shapes than the circular cylinder.</p>
+<section id="singularities" class="level2">
+<h2 class="anchored" data-anchor-id="singularities">Singularities</h2>
+<p>Consider a complex variable <span class="math inline">\(\zeta = \xi + \mathrm{i} \eta\)</span> and the flow around a disc <span class="math inline">\(D\)</span> of radius <span class="math inline">\(c\)</span> centred at some <span class="math inline">\(\zeta_0\)</span> in the <span class="math inline">\(\zeta\)</span>-plane. Let <span class="math inline">\(\kappa\)</span> be the circulation, the complex potential corresponding to this is</p>
+<p><span class="math display">\[
+    \hat{w}(\zeta)=-(U-\mathrm{i} V)\left(\zeta-\zeta_0\right)-(U+\mathrm{i} V) \frac{c^2}{\zeta-\zeta_0}-\frac{\mathrm{i} \kappa}{2 \pi} \log \frac{\zeta-\zeta_0}{c}.
+\]</span></p>
+<p>We can use an invertible map <span class="math inline">\(z=f(\zeta)\)</span> that is analytic outside the disc and getting close to the identity as <span class="math inline">\(|\zeta| \rightarrow \infty\)</span> to define a complex potential in the <span class="math inline">\(z\)</span>-plane by <span class="math display">\[
+    w(z)=\hat{w}(\zeta) \quad \text { with } \quad z=f(\zeta).
+\]</span></p>
+<p>This complex potential then describes the flow around the image of <span class="math inline">\(D\)</span> by the map <span class="math inline">\(f(\zeta)\)</span>. To compute the flow around realistic-looking wings, we take the map <span class="math display">\[
+    f(\zeta) = \zeta + \frac{\lambda^2}{\zeta}, \quad 0 \leq \lambda &lt; 1,
+\]</span> and <span class="math inline">\(\zeta_0\)</span> in the complex plane. We are going to examine the singularities of the inverse map <span class="math inline">\(f^{-1}(z)\)</span>. We say <span class="math inline">\(z_0\)</span> is a singularity of <span class="math inline">\(f\)</span> if <span class="math inline">\(f\)</span> is not holomorphic at <span class="math inline">\(z_0\)</span>. Inverting and differentiating <span class="math inline">\(f(\zeta)\)</span> we get <span class="math display">\[
+\zeta = f^{-1}(z) = \frac{z \pm \sqrt{z^2 - 4\lambda^2}}{2}, \space \text{and} \quad \frac{\partial\zeta}{\partial z} = \frac{1}{2} \pm \frac{z}{\sqrt{z^2-4\lambda^2}}.
+\]</span></p>
+<p>By definition, the derivative is not defined at <span class="math inline">\(z = \pm 2\lambda\)</span>, so <span class="math inline">\(z = \pm 2\lambda\)</span> are square root singularities of <span class="math inline">\(f^{-1}(z)\)</span>, corresponding to <span class="math inline">\(\zeta = \pm \lambda\)</span>.</p>
+<p>We let <span class="math inline">\(\zeta_0 = - \lambda + c e^{\mathrm{i} \beta}\)</span> for some <span class="math inline">\(\beta &gt; 0\)</span> such that <span class="math inline">\(c\cos{\beta} &gt; \lambda\)</span>. Now we are going to identify the positions of the singularities. For <span class="math inline">\(\zeta = \lambda\)</span>, we can compute the distance from the centre <span class="math inline">\(\zeta_0\)</span> to <span class="math inline">\(\zeta\)</span> as <span class="math display">\[
+\begin{align*}
+    | \zeta_0 - \zeta | = |-2 \lambda + c e^{\mathrm{i} \beta}|
+                          &amp;= |-2 \lambda + c(\cos{\beta} + \mathrm{i}\sin{\beta})| \\
+                          &amp;= \sqrt{(-2 \lambda + c\cos{\beta})^2 + c^2\sin^2{\beta}} \\
+                          &amp;= \sqrt{4\lambda (\lambda - c\cos{\beta}) + c^2(\cos^2{\beta} + \sin^2{\beta})} \nonumber
+                          &lt;\sqrt{c^2} = c.
+\end{align*}
+\]</span></p>
+<p>Since <span class="math inline">\(| \zeta_0 - \zeta |\)</span> is shorter than the radius of the disc <span class="math inline">\(D\)</span>, the singularity <span class="math inline">\(\zeta = \lambda\)</span> is inside <span class="math inline">\(D\)</span>. Similarly, we get <span class="math inline">\(| \zeta_0 - \zeta_1 | = |c e^{\mathrm{i} \beta}| = c\)</span> for <span class="math inline">\(\zeta_1 = -\lambda\)</span>, indicating that the singularity <span class="math inline">\(\zeta_1\)</span> is on the circle <span class="math inline">\(\partial D\)</span>.</p>
+</section>
+<section id="flow-around-wings" class="level2">
+<h2 class="anchored" data-anchor-id="flow-around-wings">Flow around wings</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wing1.png" class="img-fluid figure-img"></p>
+<figcaption>The resemble wings obtained by mapping <span class="math inline">\(D\)</span> with <span class="math inline">\(f\)</span> with parameters fixed <span class="math inline">\(c = 1\)</span>, <span class="math inline">\(\lambda = 0.9\)</span>, and <span class="math inline">\(\beta = 0\)</span> (left), 0.3 (middle), and 0.4.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wing2.png" class="img-fluid figure-img"></p>
+<figcaption>The resemble wings obtained by mapping <span class="math inline">\(D\)</span> with <span class="math inline">\(f\)</span> with parameters fixed <span class="math inline">\(c = 1\)</span>, <span class="math inline">\(\beta = 0.3\)</span>, and <span class="math inline">\(\lambda = 0.5\)</span> (left), 0.2 (middle), and 0.</figcaption>
+</figure>
+</div>
+<p>As <span class="math inline">\(c\)</span> is the radius of disc <span class="math inline">\(D\)</span>, we may fix it as a constant. For simple calculation we take <span class="math inline">\(c = 1\)</span>. The resemble wings all have a smooth leading edge and a cusp at the trailing edge corresponding to <span class="math inline">\(\zeta =\zeta_1\)</span>, except the one on the bottom right. We found that a wing with larger value of <span class="math inline">\(\beta\)</span> has more curved shape. When <span class="math inline">\(\beta = 0\)</span>, the wing becomes a symmetric drop shape. We can say that the degree of curvature of the wing shape depends on <span class="math inline">\(\beta\)</span>. Also, it can be seen that a wing with lower <span class="math inline">\(\lambda\)</span> has rounder shape. Particularly, when <span class="math inline">\(\lambda = 0\)</span>, the map becomes an identity map, hence the shape becomes a circle. Thus we may conclude that <span class="math inline">\(\lambda\)</span> control the roundness of the shape.</p>
+<p>We can compute the velocity field using the derivative of the flow as <span class="math display">\[
+\begin{align*}
+    u-\mathrm{i} v=w^{\prime}(z)&amp;=\hat{w}^{\prime}(\zeta) / f^{\prime}(\zeta)  \\
+    &amp;=\left(1-\lambda^2 / \zeta^2\right)^{-1}\left(-(U-\mathrm{i} V)+(U+\mathrm{i} V) c^2/(\zeta-\zeta_0)^{2}-\mathrm{i} \kappa /(2 \pi (\zeta-\zeta_0))\right)\\
+    &amp;=\left(1-\lambda^2 / \zeta^2\right)^{-1}\left(-|\mathbf{U}|e^{\mathrm{i}\alpha}+|\mathbf{U}|e^{-\mathrm{i} \alpha} c^2/(\zeta-\zeta_0)^{2}-\mathrm{i} \kappa /(2 \pi (\zeta-\zeta_0))\right),
+\end{align*}
+\]</span> where <span class="math inline">\(U + \mathrm{i}V = |\mathbf{U}|e^{-i\alpha}\)</span> defines the angle of attack <span class="math inline">\(\alpha\)</span>. The velocity field is infinite at the trailing edge corresponding to <span class="math inline">\(\zeta_1 = -\lambda\)</span> since <span class="math inline">\(f^{\prime}(\zeta_1) = 0\)</span>, except when <span class="math inline">\(\hat{w}^{\prime}(\zeta_1) = 0\)</span>.</p>
+<p>Now we are going to derive an expression for the circulation, <span class="math inline">\(\kappa\)</span>, which takes a value such that the trailing edge velocity remains finite. So we need to find <span class="math inline">\(\kappa\)</span> which makes <span class="math inline">\(\hat{w}^{\prime}(\zeta_1) = 0\)</span>. Using <span class="math inline">\(\zeta_1-\zeta_0 = -\lambda + \lambda - ce^{i\beta} = - ce^{i\beta}\)</span>, we have <span class="math inline">\(\hat{w}^{\prime}(\zeta_1) = -|\mathbf{U}|e^{\mathrm{i}\alpha}+|\mathbf{U}|e^{-\mathrm{i}(\alpha+2\beta)}+\mathrm{i} \kappa /(2 \pi c) e^{-\mathrm{i}\beta}=0\)</span>. Solving for <span class="math inline">\(\kappa\)</span> we get <span class="math display">\[
+    \kappa = (|\mathbf{U}|e^{\mathrm{i}(\alpha+\beta)} - |\mathbf{U}|e^{-\mathrm{i}(\alpha+\beta)})(2\pi c/\mathrm{i}) = 2|\mathbf{U}|\mathrm{i}\sin{(\alpha+\beta)}(2\pi c/\mathrm{i}) = 4\pi c|\mathbf{U}|\sin{(\alpha+\beta)}.\nonumber
+\]</span></p>
+<p>Therefore, if <span class="math inline">\(\kappa \neq 4\pi c|\mathbf{U}| \sin{(\alpha+\beta)}\)</span>, we have <span class="math inline">\(\hat{w}^{\prime}(\zeta_1) \neq 0\)</span>, resulting a infinite velocity field at the trailing edge.</p>
+</section>
+<section id="resulting-lift" class="level2">
+<h2 class="anchored" data-anchor-id="resulting-lift">Resulting lift</h2>
+<p>The lift for the wing is computed as the force perpendicular to the velocity at infinity, <span class="math inline">\(\kappa|\mathbf{U}|\)</span>. Without loss of generality, we can take <span class="math inline">\(|\mathbf{U}| = c = 1\)</span>, thus we get an expression for lift which is <span class="math inline">\(4\pi \sin{(\alpha+\beta)}\)</span>. The lift for the wing therefore depends on <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="velocity-field.png" class="img-fluid figure-img"></p>
+<figcaption>The velocity field around some wings designed using fixed <span class="math inline">\(c = 1\)</span>, <span class="math inline">\(\lambda = 0.9\)</span>, and different values of <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>. The lift for wings are shown below each plot.</figcaption>
+</figure>
+</div>
+<p>The expression for the lift of the wing indicates that the relationship between the lift and parameters <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> is a sine function.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="lift.png" class="img-fluid figure-img"></p>
+<figcaption>The lift for the wing computed using different value of <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>.</figcaption>
+</figure>
+</div>
+<p>We can deduce from the plot that the lift is at maximum when <span class="math inline">\(\alpha + \beta = \pi/2\)</span>.</p>
+</section>
+<section id="discussion" class="level2">
+<h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
+<p>We explored on how the complex formulation leads to predictions for the flow around wings. The roundness and curvature of the wings are controlled by <span class="math inline">\(\lambda\)</span> and <span class="math inline">\(\beta\)</span> respectively. We conclude that the velocity field is always infinite at the trailing edge unless <span class="math inline">\(\kappa = 4\pi c|\mathbf{U}|\sin{(\alpha+\beta)}\)</span>, and the maximum lift for the wing is then reached when <span class="math inline">\(\alpha + \beta = \pi/2\)</span>. However, for flow of real fluid, if a viscous flow past a cylinder, it will acquire a thin boundary layer adjacent to the surface of the cylinder. A trailing wake will exist in the flow behind the cylinder due to Boundary layer separation. The pressure at each point on the wake side of the cylinder will be lower than on the upstream side, resulting in a drag force in the downstream direction</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© Ashlynn Lu 2024</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/AshlynnLu/profile-page/edit/main/posts/potential-flows/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AshlynnLu/profile-page/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/AshlynnLu">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/kexin-lu-246256228">
+      <i class="bi bi-linkedin" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.facebook.com/kexin.lu.370">
+      <i class="bi bi-facebook" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
