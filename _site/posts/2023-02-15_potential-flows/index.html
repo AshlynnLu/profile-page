@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Ashlynn Lu">
+<meta name="dcterms.date" content="2023-02-15">
 
-<title>Ashlynn Lu - Photo gallery</title>
+<title>Ashlynn Lu - Complex Analysis Method for Potential Flows and the Resulting Lift</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,18 +69,47 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Ashlynn Lu</span>
     </a>
   </div>
@@ -92,15 +120,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./research.html"> 
+    <a class="nav-link" href="../../research.html"> 
 <span class="menu-text">Writing</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./photo.html" aria-current="page"> 
+    <a class="nav-link" href="../../photo.html"> 
 <span class="menu-text">Photo</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -130,48 +158,138 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Complex Analysis Method for Potential Flows and the Resulting Lift</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">analysis</div>
+                <div class="quarto-category">fluid mechanics</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Ashlynn Lu </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 15, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#singularities" id="toc-singularities" class="nav-link active" data-scroll-target="#singularities">Singularities</a></li>
+  <li><a href="#flow-around-wings" id="toc-flow-around-wings" class="nav-link" data-scroll-target="#flow-around-wings">Flow around wings</a></li>
+  <li><a href="#resulting-lift" id="toc-resulting-lift" class="nav-link" data-scroll-target="#resulting-lift">Resulting lift</a></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/AshlynnLu/profile-page/edit/main/posts/2023-02-15_potential-flows/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AshlynnLu/profile-page/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Photo gallery</h1>
+
+
+
+
+<p>we are going to use complex-variable methods to compute two-dimensional irrotational flows of inviscid incompressible fluids around objects. We can use complex mappings to find flows around more complicated shapes than the circular cylinder.</p>
+<section id="singularities" class="level2">
+<h2 class="anchored" data-anchor-id="singularities">Singularities</h2>
+<p>Consider a complex variable <span class="math inline">\(\zeta = \xi + \mathrm{i} \eta\)</span> and the flow around a disc <span class="math inline">\(D\)</span> of radius <span class="math inline">\(c\)</span> centred at some <span class="math inline">\(\zeta_0\)</span> in the <span class="math inline">\(\zeta\)</span>-plane. Let <span class="math inline">\(\kappa\)</span> be the circulation, the complex potential corresponding to this is</p>
+<p><span class="math display">\[
+    \hat{w}(\zeta)=-(U-\mathrm{i} V)\left(\zeta-\zeta_0\right)-(U+\mathrm{i} V) \frac{c^2}{\zeta-\zeta_0}-\frac{\mathrm{i} \kappa}{2 \pi} \log \frac{\zeta-\zeta_0}{c}.
+\]</span></p>
+<p>We can use an invertible map <span class="math inline">\(z=f(\zeta)\)</span> that is analytic outside the disc and getting close to the identity as <span class="math inline">\(|\zeta| \rightarrow \infty\)</span> to define a complex potential in the <span class="math inline">\(z\)</span>-plane by <span class="math display">\[
+    w(z)=\hat{w}(\zeta) \quad \text { with } \quad z=f(\zeta).
+\]</span></p>
+<p>This complex potential then describes the flow around the image of <span class="math inline">\(D\)</span> by the map <span class="math inline">\(f(\zeta)\)</span>. To compute the flow around realistic-looking wings, we take the map <span class="math display">\[
+    f(\zeta) = \zeta + \frac{\lambda^2}{\zeta}, \quad 0 \leq \lambda &lt; 1,
+\]</span> and <span class="math inline">\(\zeta_0\)</span> in the complex plane. We are going to examine the singularities of the inverse map <span class="math inline">\(f^{-1}(z)\)</span>. We say <span class="math inline">\(z_0\)</span> is a singularity of <span class="math inline">\(f\)</span> if <span class="math inline">\(f\)</span> is not holomorphic at <span class="math inline">\(z_0\)</span>. Inverting and differentiating <span class="math inline">\(f(\zeta)\)</span> we get <span class="math display">\[
+\zeta = f^{-1}(z) = \frac{z \pm \sqrt{z^2 - 4\lambda^2}}{2}, \space \text{and} \quad \frac{\partial\zeta}{\partial z} = \frac{1}{2} \pm \frac{z}{\sqrt{z^2-4\lambda^2}}.
+\]</span></p>
+<p>By definition, the derivative is not defined at <span class="math inline">\(z = \pm 2\lambda\)</span>, so <span class="math inline">\(z = \pm 2\lambda\)</span> are square root singularities of <span class="math inline">\(f^{-1}(z)\)</span>, corresponding to <span class="math inline">\(\zeta = \pm \lambda\)</span>.</p>
+<p>We let <span class="math inline">\(\zeta_0 = - \lambda + c e^{\mathrm{i} \beta}\)</span> for some <span class="math inline">\(\beta &gt; 0\)</span> such that <span class="math inline">\(c\cos{\beta} &gt; \lambda\)</span>. Now we are going to identify the positions of the singularities. For <span class="math inline">\(\zeta = \lambda\)</span>, we can compute the distance from the centre <span class="math inline">\(\zeta_0\)</span> to <span class="math inline">\(\zeta\)</span> as <span class="math display">\[
+\begin{align*}
+    | \zeta_0 - \zeta | = |-2 \lambda + c e^{\mathrm{i} \beta}|
+                          &amp;= |-2 \lambda + c(\cos{\beta} + \mathrm{i}\sin{\beta})| \\
+                          &amp;= \sqrt{(-2 \lambda + c\cos{\beta})^2 + c^2\sin^2{\beta}} \\
+                          &amp;= \sqrt{4\lambda (\lambda - c\cos{\beta}) + c^2(\cos^2{\beta} + \sin^2{\beta})} \nonumber
+                          &lt;\sqrt{c^2} = c.
+\end{align*}
+\]</span></p>
+<p>Since <span class="math inline">\(| \zeta_0 - \zeta |\)</span> is shorter than the radius of the disc <span class="math inline">\(D\)</span>, the singularity <span class="math inline">\(\zeta = \lambda\)</span> is inside <span class="math inline">\(D\)</span>. Similarly, we get <span class="math inline">\(| \zeta_0 - \zeta_1 | = |c e^{\mathrm{i} \beta}| = c\)</span> for <span class="math inline">\(\zeta_1 = -\lambda\)</span>, indicating that the singularity <span class="math inline">\(\zeta_1\)</span> is on the circle <span class="math inline">\(\partial D\)</span>.</p>
+</section>
+<section id="flow-around-wings" class="level2">
+<h2 class="anchored" data-anchor-id="flow-around-wings">Flow around wings</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wing1.png" class="img-fluid figure-img"></p>
+<figcaption>The resemble wings obtained by mapping <span class="math inline">\(D\)</span> with <span class="math inline">\(f\)</span> with parameters fixed <span class="math inline">\(c = 1\)</span>, <span class="math inline">\(\lambda = 0.9\)</span>, and <span class="math inline">\(\beta = 0\)</span> (left), 0.3 (middle), and 0.4.</figcaption>
+</figure>
 </div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<div style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;">
-<p><a href="photo/1.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/1.jpg" class="img-fluid"></a></p>
-<p><a href="photo/2.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/2.jpg" class="img-fluid"></a></p>
-<p><a href="photo/3.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/3.jpg" class="img-fluid"></a></p>
-<p><a href="photo/4.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/4.jpg" class="img-fluid"></a></p>
-<p><a href="photo/5.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/5.jpg" class="img-fluid"></a></p>
-<p><a href="photo/6.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/6.jpg" class="img-fluid"></a></p>
-<p><a href="photo/7.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/7.jpg" class="img-fluid"></a></p>
-<p><a href="photo/8.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/8.jpg" class="img-fluid"></a></p>
-<p><a href="photo/9.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/9.jpg" class="img-fluid"></a></p>
-<p><a href="photo/10.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/10.jpg" class="img-fluid"></a></p>
-<p><a href="photo/11.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/11.jpg" class="img-fluid"></a></p>
-<p><a href="photo/12.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/12.jpg" class="img-fluid"></a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wing2.png" class="img-fluid figure-img"></p>
+<figcaption>The resemble wings obtained by mapping <span class="math inline">\(D\)</span> with <span class="math inline">\(f\)</span> with parameters fixed <span class="math inline">\(c = 1\)</span>, <span class="math inline">\(\beta = 0.3\)</span>, and <span class="math inline">\(\lambda = 0.5\)</span> (left), 0.2 (middle), and 0.</figcaption>
+</figure>
 </div>
+<p>As <span class="math inline">\(c\)</span> is the radius of disc <span class="math inline">\(D\)</span>, we may fix it as a constant. For simple calculation we take <span class="math inline">\(c = 1\)</span>. The resemble wings all have a smooth leading edge and a cusp at the trailing edge corresponding to <span class="math inline">\(\zeta =\zeta_1\)</span>, except the one on the bottom right. We found that a wing with larger value of <span class="math inline">\(\beta\)</span> has more curved shape. When <span class="math inline">\(\beta = 0\)</span>, the wing becomes a symmetric drop shape. We can say that the degree of curvature of the wing shape depends on <span class="math inline">\(\beta\)</span>. Also, it can be seen that a wing with lower <span class="math inline">\(\lambda\)</span> has rounder shape. Particularly, when <span class="math inline">\(\lambda = 0\)</span>, the map becomes an identity map, hence the shape becomes a circle. Thus we may conclude that <span class="math inline">\(\lambda\)</span> control the roundness of the shape.</p>
+<p>We can compute the velocity field using the derivative of the flow as <span class="math display">\[
+\begin{align*}
+    u-\mathrm{i} v=w^{\prime}(z)&amp;=\hat{w}^{\prime}(\zeta) / f^{\prime}(\zeta)  \\
+    &amp;=\left(1-\lambda^2 / \zeta^2\right)^{-1}\left(-(U-\mathrm{i} V)+(U+\mathrm{i} V) c^2/(\zeta-\zeta_0)^{2}-\mathrm{i} \kappa /(2 \pi (\zeta-\zeta_0))\right)\\
+    &amp;=\left(1-\lambda^2 / \zeta^2\right)^{-1}\left(-|\mathbf{U}|e^{\mathrm{i}\alpha}+|\mathbf{U}|e^{-\mathrm{i} \alpha} c^2/(\zeta-\zeta_0)^{2}-\mathrm{i} \kappa /(2 \pi (\zeta-\zeta_0))\right),
+\end{align*}
+\]</span> where <span class="math inline">\(U + \mathrm{i}V = |\mathbf{U}|e^{-i\alpha}\)</span> defines the angle of attack <span class="math inline">\(\alpha\)</span>. The velocity field is infinite at the trailing edge corresponding to <span class="math inline">\(\zeta_1 = -\lambda\)</span> since <span class="math inline">\(f^{\prime}(\zeta_1) = 0\)</span>, except when <span class="math inline">\(\hat{w}^{\prime}(\zeta_1) = 0\)</span>.</p>
+<p>Now we are going to derive an expression for the circulation, <span class="math inline">\(\kappa\)</span>, which takes a value such that the trailing edge velocity remains finite. So we need to find <span class="math inline">\(\kappa\)</span> which makes <span class="math inline">\(\hat{w}^{\prime}(\zeta_1) = 0\)</span>. Using <span class="math inline">\(\zeta_1-\zeta_0 = -\lambda + \lambda - ce^{i\beta} = - ce^{i\beta}\)</span>, we have <span class="math inline">\(\hat{w}^{\prime}(\zeta_1) = -|\mathbf{U}|e^{\mathrm{i}\alpha}+|\mathbf{U}|e^{-\mathrm{i}(\alpha+2\beta)}+\mathrm{i} \kappa /(2 \pi c) e^{-\mathrm{i}\beta}=0\)</span>. Solving for <span class="math inline">\(\kappa\)</span> we get <span class="math display">\[
+    \kappa = (|\mathbf{U}|e^{\mathrm{i}(\alpha+\beta)} - |\mathbf{U}|e^{-\mathrm{i}(\alpha+\beta)})(2\pi c/\mathrm{i}) = 2|\mathbf{U}|\mathrm{i}\sin{(\alpha+\beta)}(2\pi c/\mathrm{i}) = 4\pi c|\mathbf{U}|\sin{(\alpha+\beta)}.\nonumber
+\]</span></p>
+<p>Therefore, if <span class="math inline">\(\kappa \neq 4\pi c|\mathbf{U}| \sin{(\alpha+\beta)}\)</span>, we have <span class="math inline">\(\hat{w}^{\prime}(\zeta_1) \neq 0\)</span>, resulting a infinite velocity field at the trailing edge.</p>
+</section>
+<section id="resulting-lift" class="level2">
+<h2 class="anchored" data-anchor-id="resulting-lift">Resulting lift</h2>
+<p>The lift for the wing is computed as the force perpendicular to the velocity at infinity, <span class="math inline">\(\kappa|\mathbf{U}|\)</span>. Without loss of generality, we can take <span class="math inline">\(|\mathbf{U}| = c = 1\)</span>, thus we get an expression for lift which is <span class="math inline">\(4\pi \sin{(\alpha+\beta)}\)</span>. The lift for the wing therefore depends on <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="velocity-field.png" class="img-fluid figure-img"></p>
+<figcaption>The velocity field around some wings designed using fixed <span class="math inline">\(c = 1\)</span>, <span class="math inline">\(\lambda = 0.9\)</span>, and different values of <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>. The lift for wings are shown below each plot.</figcaption>
+</figure>
+</div>
+<p>The expression for the lift of the wing indicates that the relationship between the lift and parameters <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> is a sine function.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="lift.png" class="img-fluid figure-img"></p>
+<figcaption>The lift for the wing computed using different value of <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>.</figcaption>
+</figure>
+</div>
+<p>We can deduce from the plot that the lift is at maximum when <span class="math inline">\(\alpha + \beta = \pi/2\)</span>.</p>
+</section>
+<section id="discussion" class="level2">
+<h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
+<p>We explored on how the complex formulation leads to predictions for the flow around wings. The roundness and curvature of the wings are controlled by <span class="math inline">\(\lambda\)</span> and <span class="math inline">\(\beta\)</span> respectively. We conclude that the velocity field is always infinite at the trailing edge unless <span class="math inline">\(\kappa = 4\pi c|\mathbf{U}|\sin{(\alpha+\beta)}\)</span>, and the maximum lift for the wing is then reached when <span class="math inline">\(\alpha + \beta = \pi/2\)</span>. However, for flow of real fluid, if a viscous flow past a cylinder, it will acquire a thin boundary layer adjacent to the surface of the cylinder. A trailing wake will exist in the flow behind the cylinder due to Boundary layer separation. The pressure at each point on the wake side of the cylinder will be lower than on the upstream side, resulting in a drag force in the downstream direction</p>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -564,7 +682,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/AshlynnLu/profile-page/edit/main/photo.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AshlynnLu/profile-page/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/AshlynnLu/profile-page/edit/main/posts/2023-02-15_potential-flows/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AshlynnLu/profile-page/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
@@ -589,31 +707,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":false,"openEffect":"zoom","descPosition":"bottom"});
-window.onload = () => {
-  lightboxQuarto.on('slide_before_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    const href = trigger.getAttribute('href');
-    if (href !== null) {
-      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-      if (imgEl !== null) {
-        const srcAttr = imgEl.getAttribute("src");
-        if (srcAttr && srcAttr.startsWith("data:")) {
-          slideConfig.href = srcAttr;
-        }
-      }
-    } 
-  });
-
-  lightboxQuarto.on('slide_after_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    if (window.Quarto?.typesetMath) {
-      window.Quarto.typesetMath(slideNode);
-    }
-  });
-
-};
-          </script>
 
 
 

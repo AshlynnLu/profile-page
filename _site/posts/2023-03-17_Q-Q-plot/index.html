@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Ashlynn Lu">
+<meta name="dcterms.date" content="2023-03-17">
 
-<title>Ashlynn Lu - Photo gallery</title>
+<title>Ashlynn Lu - Interactive Q-Q Plot</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,18 +69,47 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Ashlynn Lu</span>
     </a>
   </div>
@@ -92,15 +120,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./research.html"> 
+    <a class="nav-link" href="../../research.html"> 
 <span class="menu-text">Writing</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./photo.html" aria-current="page"> 
+    <a class="nav-link" href="../../photo.html"> 
 <span class="menu-text">Photo</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -130,48 +158,127 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Interactive Q-Q Plot</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">data visualisation</div>
+                <div class="quarto-category">interactive plots</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Ashlynn Lu </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">March 17, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#assessment-of-normality" id="toc-assessment-of-normality" class="nav-link active" data-scroll-target="#assessment-of-normality">Assessment of Normality</a>
+  <ul class="collapse">
+  <li><a href="#quantile-quantile-plots-q-q-plots" id="toc-quantile-quantile-plots-q-q-plots" class="nav-link" data-scroll-target="#quantile-quantile-plots-q-q-plots">Quantile-Quantile Plots (Q-Q Plots)</a></li>
+  </ul></li>
+  <li><a href="#numerical-test" id="toc-numerical-test" class="nav-link" data-scroll-target="#numerical-test">Numerical Test</a></li>
+  <li><a href="#confidence-interval" id="toc-confidence-interval" class="nav-link" data-scroll-target="#confidence-interval">Confidence Interval</a></li>
+  <li><a href="#try-to-identify-normality-of-the-data" id="toc-try-to-identify-normality-of-the-data" class="nav-link" data-scroll-target="#try-to-identify-normality-of-the-data">Try to identify normality of the data!</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/AshlynnLu/profile-page/edit/main/posts/2023-03-17_Q-Q-plot/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AshlynnLu/profile-page/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Photo gallery</h1>
+
+
+
+
+<p>Data visualization plays a significant role in data analysis. It is a process of transforming large amounts of complex numerical data into more manageable visual representations, hence helping statisticians to discover and identify any unexpected pattern of data.</p>
+<p>The objective when performing a formal hypothesis test is to propose and calculate a numerical test statistic and compare it to some critical value under the null hypothesis to make a binary decision, either to reject or fail to reject the null hypothesis. Similarly, the objective when creating a data visualisation is to describe the data and to make some decisions about it. Graphical procedures, such as the quantile–quantile (Q–Q) plot, are undoubtedly the most popular methods to identify the nature of the distribution of data.</p>
+<section id="assessment-of-normality" class="level2">
+<h2 class="anchored" data-anchor-id="assessment-of-normality">Assessment of Normality</h2>
+<p>An assessment of the normality of data is necessary for checking the validation of assumptions in various parametric statistical tests, including linear regression, t-tests, and analysis of variance. If this assumption is violated then the conclusion of these tests will be unreliable. There are two main methods of assessing normality: graphical and numerical. In this study, we mainly focus on the Q-Q plot for the graphical method, together with the Shapiro–Wilk test for the numerical test.</p>
+<section id="quantile-quantile-plots-q-q-plots" class="level3">
+<h3 class="anchored" data-anchor-id="quantile-quantile-plots-q-q-plots">Quantile-Quantile Plots (Q-Q Plots)</h3>
+<p>A Q-Q plot is a probability plot which compares if two probability distributions are close to each other by shape by plotting their quantiles against each other. If the two distribution is similar, the points on the plots are approximately allocated on the identity line <span class="math inline">\(y = x\)</span>. Q-Q plots are frequently utilized to compare a sample’s distribution to that of the standard normal distribution <span class="math inline">\(N(0,1)\)</span>. This is done by sorting the data and plotting them against specific quantiles of the standard normal distribution. Unlike numerical tests like the Shapiro–Wilk test which only indicates normality but without any feature of the distribution, properties of shapes of distribution such as heavy-tail, light-tail, and skewness are identifiable in Q-Q plots.</p>
+</section>
+</section>
+<section id="numerical-test" class="level2">
+<h2 class="anchored" data-anchor-id="numerical-test">Numerical Test</h2>
+<p>One well-known statistical tests for normality is the Shapiro–Wilk (SW) test. In the SW test, the null hypothesis is that the sample, <span class="math inline">\(x_1, \cdots , x_n\)</span>, was drawn from a population that follows a normal distribution. If the p-value of the test is below a specific significance level, such as <span class="math inline">\(\alpha = 0.05\)</span>, then there is enough evidence to reject the null hypothesis, indicating that the data does not follow a normal distribution. We are going to discuss the different configurations of the two tests.</p>
+<p>However, the numerical test will sometimes give misleading results. Below shows a Q-Q plot using a sample with size <span class="math inline">\(n = 30\)</span> of data generated from the standard normal distribution.</p>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
 </div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
 
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<div style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;">
-<p><a href="photo/1.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/1.jpg" class="img-fluid"></a></p>
-<p><a href="photo/2.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/2.jpg" class="img-fluid"></a></p>
-<p><a href="photo/3.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/3.jpg" class="img-fluid"></a></p>
-<p><a href="photo/4.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/4.jpg" class="img-fluid"></a></p>
-<p><a href="photo/5.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/5.jpg" class="img-fluid"></a></p>
-<p><a href="photo/6.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/6.jpg" class="img-fluid"></a></p>
-<p><a href="photo/7.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/7.jpg" class="img-fluid"></a></p>
-<p><a href="photo/8.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/8.jpg" class="img-fluid"></a></p>
-<p><a href="photo/9.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/9.jpg" class="img-fluid"></a></p>
-<p><a href="photo/10.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/10.jpg" class="img-fluid"></a></p>
-<p><a href="photo/11.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/11.jpg" class="img-fluid"></a></p>
-<p><a href="photo/12.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/12.jpg" class="img-fluid"></a></p>
+    filter, lag</code></pre>
 </div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The p-value for SW test is:  0.033</code></pre>
+</div>
+</div>
+<p>We can see that even though the data are generated from the standard normal distribution, the SW test suggests a rejection towards normality because of the tail behaviour. Therefore, the numerical tests should always be interpreted along with a graphical method, i.e.&nbsp;a Q-Q plot.</p>
+</section>
+<section id="confidence-interval" class="level2">
+<h2 class="anchored" data-anchor-id="confidence-interval">Confidence Interval</h2>
+<p>When we inspect a Q-Q plot, we say the data is similar to a normal distribution if the empirical and theoretical quantiles roughly coincide with the line denoting the theoretical distribution. Then the question is: how close the points and line should be considered as ‘lie on the line’?</p>
+<p>Similar to how we may conclude a typical hypothesis test by assessing if the test statistic exceeds the corresponding critical value, we may consider adding a point-wise confidence interval here to assist the decision of normality by examining whether the data points lie within or exceed the interval bands. The construction of the confidence band is by repeated sampling. A 95% confidence band for the Q-Q plots represents a range of values that we may expect each quantile to be under the assumption of repeated sampling of the standard normal distribution. In this report, we are generating a large number of random samples (number of samples = 1000) of size equal to our data (n = 30) from the standard normal distribution, obtaining the 2.5% and the 97.5% quantiles for each point, and forming a confidence interval for each point estimate.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>For this example, we may say that we fail to reject normality as all points fall inside of the bands.</p>
+</section>
+<section id="try-to-identify-normality-of-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="try-to-identify-normality-of-the-data">Try to identify normality of the data!</h2>
+<iframe src="https://lkx724.shinyapps.io/2023-03-17_q-q-plot/" width="100%" height="600">
+</iframe>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -564,7 +671,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/AshlynnLu/profile-page/edit/main/photo.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AshlynnLu/profile-page/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/AshlynnLu/profile-page/edit/main/posts/2023-03-17_Q-Q-plot/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AshlynnLu/profile-page/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
@@ -589,31 +696,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":false,"openEffect":"zoom","descPosition":"bottom"});
-window.onload = () => {
-  lightboxQuarto.on('slide_before_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    const href = trigger.getAttribute('href');
-    if (href !== null) {
-      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-      if (imgEl !== null) {
-        const srcAttr = imgEl.getAttribute("src");
-        if (srcAttr && srcAttr.startsWith("data:")) {
-          slideConfig.href = srcAttr;
-        }
-      }
-    } 
-  });
-
-  lightboxQuarto.on('slide_after_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    if (window.Quarto?.typesetMath) {
-      window.Quarto.typesetMath(slideNode);
-    }
-  });
-
-};
-          </script>
 
 
 

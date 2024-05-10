@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Ashlynn Lu">
+<meta name="dcterms.date" content="2023-04-11">
 
-<title>Ashlynn Lu - Photo gallery</title>
+<title>Ashlynn Lu - the Boundary Layer Developing when a Uniform Flow Impinges on a Half-Plane</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,18 +69,47 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Ashlynn Lu</span>
     </a>
   </div>
@@ -92,15 +120,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./research.html"> 
+    <a class="nav-link" href="../../research.html"> 
 <span class="menu-text">Writing</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./photo.html" aria-current="page"> 
+    <a class="nav-link" href="../../photo.html"> 
 <span class="menu-text">Photo</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -130,48 +158,130 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">the Boundary Layer Developing when a Uniform Flow Impinges on a Half-Plane</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">analysis</div>
+                <div class="quarto-category">fluid mechanics</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Ashlynn Lu </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">April 11, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#solutions-ux-z-and-wx-z" id="toc-solutions-ux-z-and-wx-z" class="nav-link active" data-scroll-target="#solutions-ux-z-and-wx-z">Solutions <span class="math inline">\(u(x, z)\)</span> and <span class="math inline">\(w(x, z)\)</span></a></li>
+  <li><a href="#the-boundary-layer-thickness" id="toc-the-boundary-layer-thickness" class="nav-link" data-scroll-target="#the-boundary-layer-thickness">The boundary layer thickness</a></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/AshlynnLu/profile-page/edit/main/posts/2023-04-11_boundary-layer/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AshlynnLu/profile-page/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Photo gallery</h1>
+
+
+
+
+<p>Analysing the boundary layer developing when a uniform flow impinges on a half-plane by approximating the Navier-Stokes equation and divergence-free conditions, and derived a system of equations that can be solved numerically to obtain the velocity components in the boundary layer.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="half-plane.png" class="img-fluid figure-img" width="1000"></p>
+<figcaption>Schematic of the boundary-layer flow over a half-plane.</figcaption>
+</figure>
 </div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<div style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;">
-<p><a href="photo/1.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/1.jpg" class="img-fluid"></a></p>
-<p><a href="photo/2.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/2.jpg" class="img-fluid"></a></p>
-<p><a href="photo/3.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/3.jpg" class="img-fluid"></a></p>
-<p><a href="photo/4.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/4.jpg" class="img-fluid"></a></p>
-<p><a href="photo/5.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/5.jpg" class="img-fluid"></a></p>
-<p><a href="photo/6.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/6.jpg" class="img-fluid"></a></p>
-<p><a href="photo/7.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/7.jpg" class="img-fluid"></a></p>
-<p><a href="photo/8.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/8.jpg" class="img-fluid"></a></p>
-<p><a href="photo/9.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/9.jpg" class="img-fluid"></a></p>
-<p><a href="photo/10.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/10.jpg" class="img-fluid"></a></p>
-<p><a href="photo/11.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/11.jpg" class="img-fluid"></a></p>
-<p><a href="photo/12.jpg" class="lightbox" data-gallery="my-gallery"><img src="photo/12.jpg" class="img-fluid"></a></p>
+<p>We consider that the boundary layer is formed by a time-independent uniform flow over a half-plane. We assume a uniform flow <span class="math inline">\(\boldsymbol{u}=(\mathrm{U}, 0,0)\)</span> as <span class="math inline">\(|\boldsymbol{x}| \rightarrow \infty\)</span> and independence on <span class="math inline">\(y\)</span>. The flow impinges on a thin semi-infinite plate at <span class="math inline">\(z=0\)</span> with <span class="math inline">\(x&gt;0\)</span>.</p>
+<p>We approximated the Navier-Stokes equation and divergence-free conditions by <span class="math display">\[
+u \partial_x u+w \partial_z u=\partial_{z z} u, \quad \partial_x u+\partial_z w=0,
+\]</span> where we use scaled (non-dimensional) variables. We showed that the solution for <span class="math inline">\(x&gt;0\)</span> and <span class="math inline">\(z&gt;0\)</span> can be found in the form <span class="math display">\[
+u=f^{\prime}(\eta), \quad w=\frac{1}{2 x^{1 / 2}}\left(\eta f^{\prime}(\eta)-f(\eta)\right), \quad \text { with } \quad \eta=\frac{z}{x^{1/2}},
+\]</span> where the function <span class="math inline">\(f(\eta)\)</span> satisfies the boundary-value problem <span class="math display">\[
+f^{\prime \prime \prime}+\frac{1}{2} f f^{\prime \prime}=0, \quad \text { with } \quad f(0)=f^{\prime}(0)=0 \quad \text { and } \quad \lim_{\eta \rightarrow \infty} f^{\prime}(\eta)=1.
+\]</span></p>
+<p>Note that the <span class="math inline">\(z\)</span> length scale is much shorter than the <span class="math inline">\(x\)</span> length scale, reflecting the thinness of the boundary layer.</p>
+<section id="solutions-ux-z-and-wx-z" class="level2">
+<h2 class="anchored" data-anchor-id="solutions-ux-z-and-wx-z">Solutions <span class="math inline">\(u(x, z)\)</span> and <span class="math inline">\(w(x, z)\)</span></h2>
+<p>We are going to investigate the behaviour of the solutions <span class="math inline">\(u(x, z)\)</span> and <span class="math inline">\(v(x, z)\)</span>, where <span class="math inline">\(u\)</span> represents the velocity component in the direction of the flow, and <span class="math inline">\(w\)</span> represents the velocity component normal to the flow direction. In order to solve for <span class="math inline">\(u\)</span> and <span class="math inline">\(w\)</span>, we need to first express the third-order ordinary differential equation (ODE) as a system of first-order ODEs to find a numerical solution for <span class="math inline">\(f(\eta)\)</span>, <span class="math inline">\(f'(\eta)\)</span> and <span class="math inline">\(f''(\eta)\)</span>. We define <span class="math inline">\(f_1(\eta)=f(\eta)\)</span>, <span class="math inline">\(f_2(\eta)=f'(\eta)\)</span>, and <span class="math inline">\(f_3(\eta)=f''(\eta)\)</span>. Then, the system becomes <span class="math display">\[
+f_1^{\prime} =f_2, \quad
+f_2^{\prime} =f_3, \quad
+\text{and} \quad f_3^{\prime} =-\frac{1}{2} f_1 f_3 ,
+\]</span> with the initial conditions <span class="math display">\[
+f_1(0) = f(0) = 0, \quad
+f_2(0) = f^{\prime}(0) = 0, \quad
+\text{and} \quad \lim_{\eta \rightarrow \infty} f_2(\eta) = \lim_{\eta \rightarrow \infty} f^{\prime}(\eta) = 1.
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="uw.png" class="img-fluid figure-img"></p>
+<figcaption>The solutions <span class="math inline">\(u(x, z)\)</span> and <span class="math inline">\(w(x, z)\)</span> represent the velocity components of the fluid flow in the boundary layer. The colorbars show the range of values of the velocity components.</figcaption>
+</figure>
 </div>
+<p>We can observe that the velocity profile is characterised by a thin boundary layer close to the wall, where the velocity increases rapidly from zero at the wall to its maximum value at the edge of the boundary layer. Beyond the boundary layer, the velocity approaches the free stream value, which is constant across the entire flow domain.</p>
+<p>The flow is assumed to be uniform in the <span class="math inline">\(x\)</span> direction far from the plate, so <span class="math inline">\(u\)</span> becomes constant and equal to the free-stream velocity <span class="math inline">\(\mathrm{U}\)</span>. Near the plate at <span class="math inline">\(z=0\)</span>, the velocity component <span class="math inline">\(w\)</span> is zero due to the no-slip condition. As we move away from the plate in the <span class="math inline">\(z\)</span> direction, the velocity component <span class="math inline">\(w\)</span> increases due to the viscous effects of the fluid.</p>
+</section>
+<section id="the-boundary-layer-thickness" class="level2">
+<h2 class="anchored" data-anchor-id="the-boundary-layer-thickness">The boundary layer thickness</h2>
+<p>The (non-dimensional) boundary layer thickness can be defined as <span class="math display">\[
+\delta(x)=\int_0^{\infty}(1-u(x, z)) \mathrm{d} z.
+\]</span></p>
+<p>Using the expression for <span class="math inline">\(u(x,z)\)</span> from (<span class="math inline">\(\ref{solution_uw}\)</span>) and using the change of variable <span class="math inline">\(\eta = z/x^{1/2}\)</span>, we have <span class="math display">\[
+\begin{align*}
+\delta(x) &amp;=  \int_0^{\infty} \left(1-f'(\eta)\right) x^{1/2} \mathrm{d}\eta \\
+&amp;= \lim_{L\to\infty} x^{1/2} \int_0^{L} \left(1-f'(\eta)\right) \mathrm{d}\eta \\
+&amp;= \lim_{L\to\infty} x^{1/2} \left[\eta-f(\eta)\right]_0^{L} \\
+&amp;= \lim_{L\to\infty} x^{1/2} \left(L - f(L)\right),
+\end{align*}
+\]</span> where we use that <span class="math inline">\(f(0) = 0\)</span>.</p>
+<p>We can estimate this by taking a finite but large <span class="math inline">\(L\)</span> such as <span class="math inline">\(L = 10\)</span>. Therefore we get an estimate for <span class="math inline">\(\delta(x)\)</span> which is <span class="math display">\[
+\delta(x) \approx x^{1/2}(10 - f(10)) = x^{1/2}(10 - 8.28) = 1.72x^{1/2}.
+\]</span> It shows that the boundary layer thickness increases with the distance from the wall. When the distance from the wall is very small, the thickness of the boundary layer becomes negligible.</p>
+<p>The formula for the (non-dimensional) viscous stress at the wall can be defined as <span class="math display">\[
+\sigma(x)=\left.\partial_z u(x, z)\right|_{z=0}.
+\]</span></p>
+<p>Using the expression for $ u(x, z)=f’()$ and <span class="math inline">\(\eta = z/x^{1/2}\)</span> from (<span class="math inline">\(\ref{solution_uw}\)</span>), we can obtain the derivative with respect to <span class="math inline">\(z\)</span> as <span class="math display">\[
+\frac{\partial u(x, z)}{\partial z}=\frac{d}{d \eta} f^{\prime}(\eta) \cdot \frac{\partial \eta}{\partial z}=\frac{1}{x^{1 / 2}} f^{\prime \prime}(\eta).
+\]</span> Evaluating this at <span class="math inline">\(z=0\)</span> gives <span class="math display">\[
+\sigma(x)=\left.\partial_z u(x, z)\right|_{z=0}=\frac{1}{x^{1 / 2}} f^{\prime \prime}(0).
+\]</span></p>
+<p>Since we have numerically computed <span class="math inline">\(f''(\eta)\)</span> for <span class="math inline">\(\eta \in (0, 10)\)</span>, we obtain a numeric estimate <span class="math inline">\(f''(0) = 0.332\)</span>. Therefore we have <span class="math display">\[
+\sigma(x)=\frac{0.332}{x^{1 / 2}}.
+\]</span> This tells us that the viscous stress at the wall decreases as the distance from the wall increases, and it becomes very small for large values of <span class="math inline">\(x\)</span>. This is consistent with the idea that the flow far away from the wall is nearly inviscid, and that the viscous effects are confined to a thin layer near the wall, as described by the boundary layer theory.</p>
+</section>
+<section id="discussion" class="level2">
+<h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
+<p>The numerical estimate for the boundary layer thickness, <span class="math inline">\(\delta\)</span>, shows that the boundary layer grows as the distance from the wall increases, which means that the velocity gradient near the wall decreases, and the flow becomes more uniform in the outer region. For the viscous stress at the wall, <span class="math inline">\(\sigma\)</span>, the estimate illustrates that the stress decreases with increasing distance from the wall, indicating that the flow is less influenced by the wall friction further away from the wall.</p>
+<p>However, it is important to keep in mind that these estimates are based on a simplified model, so they may not capture all the details and complexities of the actual flow. Furthermore, the accuracy of the estimates may depend on the choice of the domain size and the numerical method used to solve the boundary value problem. Therefore, it is important to validate these estimates against experimental or to refine the numerical methods and models used.</p>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -564,7 +674,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/AshlynnLu/profile-page/edit/main/photo.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AshlynnLu/profile-page/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/AshlynnLu/profile-page/edit/main/posts/2023-04-11_boundary-layer/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AshlynnLu/profile-page/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
@@ -589,31 +699,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":false,"openEffect":"zoom","descPosition":"bottom"});
-window.onload = () => {
-  lightboxQuarto.on('slide_before_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    const href = trigger.getAttribute('href');
-    if (href !== null) {
-      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-      if (imgEl !== null) {
-        const srcAttr = imgEl.getAttribute("src");
-        if (srcAttr && srcAttr.startsWith("data:")) {
-          slideConfig.href = srcAttr;
-        }
-      }
-    } 
-  });
-
-  lightboxQuarto.on('slide_after_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    if (window.Quarto?.typesetMath) {
-      window.Quarto.typesetMath(slideNode);
-    }
-  });
-
-};
-          </script>
 
 
 
