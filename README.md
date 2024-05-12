@@ -55,6 +55,6 @@ This directory contains my photography shown in 'Photo' page. Format can be foun
 
 Clone or download this repo.
 
-The webpage can be preview locally by running 'quarto preview "./index.qmd"' in terminal.
+The webpage can be preview locally by running _quarto preview "./index.qmd"_ in terminal.
 
 *For privacy issue I change my profile photo to my cat;)*
