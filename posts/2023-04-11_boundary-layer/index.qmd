@@ -3,7 +3,7 @@ title: "the Boundary Layer Developing when a Uniform Flow Impinges on a Half-Pla
 author: "Ashlynn Lu"
 date: "2023-04-11"
 categories: [analysis, fluid mechanics]
-image: "half-plane.png"
+image: "images/half-plane.png"
 format: 
   html:
     toc: true
@@ -20,7 +20,7 @@ be solved numerically to obtain the velocity components in the boundary
 layer.
 
 ![Schematic of the boundary-layer flow over a
-half-plane.](half-plane.png){width="1000"}
+half-plane.](images/half-plane.png){width="500"}
 
 We consider that the boundary layer is formed by a time-independent
 uniform flow over a half-plane. We assume a uniform flow
@@ -29,12 +29,17 @@ $|\boldsymbol{x}| \rightarrow \infty$ and independence on $y$. The flow
 impinges on a thin semi-infinite plate at $z=0$ with $x>0$.
 
 We approximated the Navier-Stokes equation and divergence-free
-conditions by $$
+conditions by 
+$$
 u \partial_x u+w \partial_z u=\partial_{z z} u, \quad \partial_x u+\partial_z w=0,
-$$ where we use scaled (non-dimensional) variables. We showed that the
-solution for $x>0$ and $z>0$ can be found in the form $$
+$$ 
+where we use scaled (non-dimensional) variables. We showed that the
+solution for $x>0$ and $z>0$ can be found in the form 
+$$
 u=f^{\prime}(\eta), \quad w=\frac{1}{2 x^{1 / 2}}\left(\eta f^{\prime}(\eta)-f(\eta)\right), \quad \text { with } \quad \eta=\frac{z}{x^{1/2}},
-$$ where the function $f(\eta)$ satisfies the boundary-value problem $$
+$$ 
+where the function $f(\eta)$ satisfies the boundary-value problem 
+$$
 f^{\prime \prime \prime}+\frac{1}{2} f f^{\prime \prime}=0, \quad \text { with } \quad f(0)=f^{\prime}(0)=0 \quad \text { and } \quad \lim_{\eta \rightarrow \infty} f^{\prime}(\eta)=1. 
 $$
 
@@ -51,11 +56,14 @@ express the third-order ordinary differential equation (ODE) as a system
 of first-order ODEs to find a numerical solution for $f(\eta)$,
 $f'(\eta)$ and $f''(\eta)$. We define $f_1(\eta)=f(\eta)$,
 $f_2(\eta)=f'(\eta)$, and $f_3(\eta)=f''(\eta)$. Then, the system
-becomes $$
+becomes 
+$$
 f_1^{\prime} =f_2, \quad
 f_2^{\prime} =f_3, \quad
 \text{and} \quad f_3^{\prime} =-\frac{1}{2} f_1 f_3 , 
-$$ with the initial conditions $$
+$$ 
+with the initial conditions 
+$$
 f_1(0) = f(0) = 0, \quad
 f_2(0) = f^{\prime}(0) = 0, \quad
 \text{and} \quad \lim_{\eta \rightarrow \infty} f_2(\eta) = \lim_{\eta \rightarrow \infty} f^{\prime}(\eta) = 1.
@@ -63,7 +71,7 @@ $$
 
 ![The solutions $u(x, z)$ and $w(x, z)$ represent the velocity
 components of the fluid flow in the boundary layer. The colorbars show
-the range of values of the velocity components.](uw.png)
+the range of values of the velocity components.](images/uw.png)
 
 We can observe that the velocity profile is characterised by a thin
 boundary layer close to the wall, where the velocity increases rapidly
@@ -80,19 +88,22 @@ effects of the fluid.
 
 ## The boundary layer thickness
 
-The (non-dimensional) boundary layer thickness can be defined as $$
+The (non-dimensional) boundary layer thickness can be defined as 
+$$
 \delta(x)=\int_0^{\infty}(1-u(x, z)) \mathrm{d} z.
 $$
 
 Using the expression for $u(x,z)$ from (\ref{solution_uw}) and using the
-change of variable $\eta = z/x^{1/2}$, we have $$
+change of variable $\eta = z/x^{1/2}$, we have 
+$$
 \begin{align*}
 \delta(x) &=  \int_0^{\infty} \left(1-f'(\eta)\right) x^{1/2} \mathrm{d}\eta \\
 &= \lim_{L\to\infty} x^{1/2} \int_0^{L} \left(1-f'(\eta)\right) \mathrm{d}\eta \\
 &= \lim_{L\to\infty} x^{1/2} \left[\eta-f(\eta)\right]_0^{L} \\
 &= \lim_{L\to\infty} x^{1/2} \left(L - f(L)\right),
 \end{align*}
-$$ where we use that $f(0) = 0$.
+$$ 
+where we use that $f(0) = 0$.
 
 We can estimate this by taking a finite but large $L$ such as $L = 10$.
 Therefore we get an estimate for $\delta(x)$ which is $$
@@ -104,22 +115,28 @@ the thickness of the boundary layer becomes negligible.
 \section{The viscous stress at the wall}
 
 The formula for the (non-dimensional) viscous stress at the wall can be
-defined as $$
+defined as 
+$$
 \sigma(x)=\left.\partial_z u(x, z)\right|_{z=0}.
 $$
 
 Using the expression for \$ u(x, z)=f'(\eta)\$ and $\eta = z/x^{1/2}$
 from (\ref{solution_uw}), we can obtain the derivative with respect to
-$z$ as $$
+$z$ as 
+$$
 \frac{\partial u(x, z)}{\partial z}=\frac{d}{d \eta} f^{\prime}(\eta) \cdot \frac{\partial \eta}{\partial z}=\frac{1}{x^{1 / 2}} f^{\prime \prime}(\eta).
-$$ Evaluating this at $z=0$ gives $$
+$$ 
+Evaluating this at $z=0$ gives 
+$$
 \sigma(x)=\left.\partial_z u(x, z)\right|_{z=0}=\frac{1}{x^{1 / 2}} f^{\prime \prime}(0).
 $$
 
 Since we have numerically computed $f''(\eta)$ for $\eta \in (0, 10)$,
-we obtain a numeric estimate $f''(0) = 0.332$. Therefore we have $$
+we obtain a numeric estimate $f''(0) = 0.332$. Therefore we have 
+$$
 \sigma(x)=\frac{0.332}{x^{1 / 2}}.
-$$ This tells us that the viscous stress at the wall decreases as the
+$$ 
+This tells us that the viscous stress at the wall decreases as the
 distance from the wall increases, and it becomes very small for large
 values of $x$. This is consistent with the idea that the flow far away
 from the wall is nearly inviscid, and that the viscous effects are

@@ -1,0 +1,9 @@
+Metadata for Raw Data Sets
+
+1. CR.sex.chicks09.Rdata
+   - Description: This dataset contains the capture history of 117 guillemot from the largest colony of common guillemot in the Baltic Sea, Stora Karlsö. Data were recorded from 2009 to 2021.
+   - Measured Variables:
+     - Year 2009 to 2021: The capture history of each guillemot. For each year, an entry of 1 correspond to being observed, and an entry of 0 correspond to not being observed.
+     - Sex: The sex of each guillemot (M = Male, F = Female).
+   - Date of Creation/Acquisition: [2022-07-18]
+   - Source: [Baltic Seabird Project](http://www.balticseabird.com)

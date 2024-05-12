@@ -11,7 +11,7 @@ website:
   navbar:
     left:
       - text: "Writing"
-        file: research.qmd
+        file: writing.qmd
       - text: "Photo"
         file: photo.qmd
       - text: "About"

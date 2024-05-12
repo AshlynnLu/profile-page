@@ -1,4 +1,12 @@
-## function to transfer cpature history to m-array
+#' Function to transfer capture history to m-array
+#'
+#' @param ch capture history
+#'
+#' @return m-array of the input capture history
+#'
+#' @examples 
+#' CH <- as.matrix(CR.sex.chicks09[, -14])
+#' marray(CH)
 marray <- function(ch){
   nind <- dim(ch)[1]    # no. of individuals 
   n.occasions <- dim(ch)[2]    # no. of occasions
@@ -25,13 +33,33 @@ marray <- function(ch){
 }
 
 
-## function to split CH into different age class
-## 3 age class
+
+#' Function to split CH into different age class
+#'
+#' @param CH capture history
+#' @param age age of a guillemot
+#' @param mAge number of age classes, default is set to 3 classes
+#'
+#' @return A [, , mAge] m-array matrix 
+#' The m-array of corresponding age class can be extract by the third index
+#'
+#' @examples 
+#' # 3 age classes
+#' CH <- as.matrix(CR.sex.chicks09[, -14])
+#' marr1 <- marray.age(CH)[,,1]
+#' marr2 <- marray.age(CH)[,,2]
+#' marr3 <- marray.age(CH)[,,3]
+#' 
+#' # 4 age classes
+#' marr1 <- marray.age(CH, mAge = 4)[,,1]
+#' marr2 <- marray.age(CH, mAge = 4)[,,2]
+#' marr3 <- marray.age(CH, mAge = 4)[,,3]
+#' marr4 <- marray.age(CH, mAge = 4)[,,4]
 marray.age <- function(CH,age,mAge=3){
   
   age <- numeric()
-  for (i in 1: dim(CH)[1]){
-    age[i]<-1
+  for (i in 1:dim(CH)[1]){
+    age[i] <- 1
   }
   
   # 1.2. Function to remove histories without any capture from a capture-recapture matrix
@@ -52,11 +80,11 @@ marray.age <- function(CH,age,mAge=3){
   }
   
   # 1.4. Function to calculate the occasion of first capture
-  get.first <- function(x) min(which(x!=0))
+  get.first <- function(x) min(which(x != 0))
   
   
   # 2. Calculations   
-  if (is.matrix(CH)==FALSE) CH <- matrix(CH, nrow = 1)   
+  if (is.matrix(CH) == FALSE) CH <- matrix(CH, nrow = 1)   
   maxAge <- max(c(max(age), mAge))
   nind <- nrow(CH)
   n.occasions <- ncol(CH)

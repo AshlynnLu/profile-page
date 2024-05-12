@@ -1,0 +1,39 @@
+Metadata for Raw Data Sets
+
+1. marijuana-sales-by-county-2014_to-date_report.csv
+   - Description: This dataset contains information about cannabis sales in counties in Colorado from Jan 2014 to current (date of download).
+   - Measured Variables:
+     - Month: The month of the sales transaction.
+     - Year: The year of the sales transaction.
+     - County: The county where the sales transaction occurred.
+     - Medical Marijuana Sales: The medical sales amount in dollars.
+     - Retail Marijuana Sales: The retail sales amount in dollars.
+   - Units:
+     - Month: Numeric (1-12).
+     - Year: Numeric (YYYY).
+     - County: Textual (string).
+     - Medical Marijuana Sales: Dollars ($).
+     - Retail Marijuana Sales: Dollars ($).
+   - Date of Creation/Acquisition: [2024-02-13]
+   - Source: [state's Google Sheet](https://docs.google.com/spreadsheets/d/1br_cwfHy24d2R2bcXacb2KarOIBKGrbR/edit#gid=1659782909)
+
+2. colorado-population.xlsx
+   - Description: This dataset contains estimated population data for each county in Colorado in 2010, 2020, 2021, and 2022.
+   - Measured Variables:
+     - County FIPS: The Federal Information Processing Standards (FIPS) code for each county.
+     - Area: The area (name) of the county.
+     - July 2010: Estimated population in July 2010.
+     - July 2020: Estimated population in July 2020.
+     - July 2021: Estimated population in July 2021.
+     - July 2022: Estimated population in July 2022.
+     - 2022 rank: Rank of the county based on its population in 2022.
+   - Units:
+     - County FIPS: Numeric (FIPS code).
+     - Area: Textual (string).
+     - July 2010: Count.
+     - July 2020: Count.
+     - July 2021: Count.
+     - July 2022: Count.
+     - 2022 rank: Numeric (rank).
+   - Date of Creation/Acquisition: [2024-02-20]
+   - Source: [the Current Population Estimates for Colorado Counties](https://gis.dola.colorado.gov/population/population-totals-counties/)

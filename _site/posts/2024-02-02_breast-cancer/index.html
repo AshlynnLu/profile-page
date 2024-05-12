@@ -120,7 +120,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../research.html"> 
+    <a class="nav-link" href="../../writing.html"> 
 <span class="menu-text">Writing</span></a>
   </li>  
   <li class="nav-item">
@@ -199,6 +199,7 @@ window.Quarto = {
   <ul>
   <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link active" data-scroll-target="#exploratory-data-analysis">Exploratory Data Analysis</a></li>
   <li><a href="#classification" id="toc-classification" class="nav-link" data-scroll-target="#classification">Classification</a></li>
+  <li><a href="#cost" id="toc-cost" class="nav-link" data-scroll-target="#cost">Cost</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/AshlynnLu/profile-page/edit/main/posts/2024-02-02_breast-cancer/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AshlynnLu/profile-page/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -215,7 +216,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="exploratory-data-analysis">Exploratory Data Analysis</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="distribution.png" class="img-fluid figure-img"></p>
+<p><img src="images/distribution.png" class="img-fluid figure-img"></p>
 <figcaption>A plot of histograms showing the distribution of the observations of each of the 30 covariates for both categories (blue for malignant (M) and orange for benign (B)).</figcaption>
 </figure>
 </div>
@@ -223,7 +224,7 @@ window.Quarto = {
 <p>We should also briefly examine the correlation between the features to do the classification using naive Bayes classifier since it assumes conditional independence. Intuitively, we may think that perimeter and area should be highly correlated with the radius of the breast masses. The heatmap below agrees with our opinion.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="heatmap.png" class="img-fluid figure-img"></p>
+<p><img src="images/heatmap.png" class="img-fluid figure-img" width="562"></p>
 <figcaption>A heatmap showing the correlation between features.</figcaption>
 </figure>
 </div>
@@ -235,7 +236,7 @@ window.Quarto = {
 <p>These procedures are done by using package <code>sklearn</code>. We use <code>StratifiedKFold</code> for the cross-validation, <code>LogisticRegression</code>, <code>KNeighborsClassifier</code>, <code>GaussianNB</code> for the classification model, and <code>cross_val_score</code> to assess the accuracy and stability. We choose <span class="math inline">\(K=3\)</span>, <span class="math inline">\(K=5\)</span>, and <span class="math inline">\(K=7\)</span> for the numbers of neighbours for the k-nearest neighbours classifier.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="table.png" class="img-fluid figure-img"></p>
+<p><img src="images/table.png" class="img-fluid figure-img" width="497"></p>
 <figcaption>The mean accuracy score and standard deviation for the three classifiers, Logistic regression, KNN (for the number of neighbours = 3, 5, 7), and Naive Bayes.</figcaption>
 </figure>
 </div>
@@ -243,14 +244,17 @@ window.Quarto = {
 <p>We repeat the entire k-fold cross-validation process 10 times across different random training/test set divisions for stability assessment. The figure below shows that the performance of all the classifiers is stable across different training/test set divisions, with the logistic regression classifier having the highest accuracy, and Naive Bayes having the lowest accuracy across all 10 iterations. The lower accuracy for the Naive Bayes may be because of the correlated features in the dataset. We can see that the performances of all three KNN classifiers are similar. We will choose <span class="math inline">\(K=3\)</span> for further analysis when using KNN.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="accuracy.png" class="img-fluid figure-img"></p>
+<p><img src="images/accuracy.png" class="img-fluid figure-img"></p>
 <figcaption>A plot showing the accuracy for the three classifiers for 10 different training/test set divisions.</figcaption>
 </figure>
 </div>
+</section>
+<section id="cost" class="level2">
+<h2 class="anchored" data-anchor-id="cost">Cost</h2>
 <p>Suppose that wrongly classifying a breast mass as benign (false negative) has a cost of 100 while wrongly classifying a breast mass as malignant (false positive) has a cost of 5. We divide the dataset into 20-80 train-test sets, train the three models on the training set, and compute the classification costs using the test set. For each classifier, we plot the classification cost on a test set associated with different decision thresholds (from 0 to 1). Choosing a high threshold typically results in a higher precision (fewer false positives) but a lower recall (more false negatives) because the model is more selective in labeling instances as positive.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="cost.png" class="img-fluid figure-img"></p>
+<p><img src="images/cost.png" class="img-fluid figure-img"></p>
 <figcaption>A plot showing the classification cost on a test set associated with different decision thresholds</figcaption>
 </figure>
 </div>

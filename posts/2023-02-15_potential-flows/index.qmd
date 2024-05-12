@@ -3,7 +3,7 @@ title: "Complex Analysis Method for Potential Flows and the Resulting Lift"
 author: "Ashlynn Lu"
 date: "2023-02-15"
 categories: [analysis, fluid mechanics]
-image: "wing-with-flow.png"
+image: "images/wing-with-flow.png"
 format: 
   html:
     toc: true
@@ -51,9 +51,9 @@ Since $| \zeta_0 - \zeta |$ is shorter than the radius of the disc $D$, the sing
 
 ## Flow around wings
 
-![The resemble wings obtained by mapping $D$ with $f$ with parameters fixed $c = 1$, $\lambda = 0.9$, and $\beta = 0$ (left), 0.3 (middle), and 0.4.](wing1.png)
+![The resemble wings obtained by mapping $D$ with $f$ with parameters fixed $c = 1$, $\lambda = 0.9$, and $\beta = 0$ (left), 0.3 (middle), and 0.4.](images/wing1.png)
 
-![The resemble wings obtained by mapping $D$ with $f$ with parameters fixed $c = 1$, $\beta = 0.3$, and $\lambda = 0.5$ (left), 0.2 (middle), and 0.](wing2.png)
+![The resemble wings obtained by mapping $D$ with $f$ with parameters fixed $c = 1$, $\beta = 0.3$, and $\lambda = 0.5$ (left), 0.2 (middle), and 0.](images/wing2.png)
 
 As $c$ is the radius of disc $D$, we may fix it as a constant. For simple calculation we take $c = 1$. The resemble wings all have a smooth leading edge and a cusp at the trailing edge corresponding to $\zeta =\zeta_1$, except the one on the bottom right. We found that a wing with larger value of $\beta$ has more curved shape. When $\beta = 0$, the wing becomes a symmetric drop shape. We can say that the degree of curvature of the wing shape depends on $\beta$. Also, it can be seen that a wing with lower $\lambda$ has rounder shape. Particularly, when $\lambda = 0$, the map becomes an identity map, hence the shape becomes a circle. Thus we may conclude that $\lambda$ control the roundness of the shape.
 
@@ -78,12 +78,12 @@ Therefore, if $\kappa \neq 4\pi c|\mathbf{U}| \sin{(\alpha+\beta)}$, we have $\h
 
 The lift for the wing is computed as the force perpendicular to the velocity at infinity, $\kappa|\mathbf{U}|$. Without loss of generality, we can take $|\mathbf{U}| = c = 1$, thus we get an expression for lift which is $4\pi \sin{(\alpha+\beta)}$. The lift for the wing therefore depends on $\alpha$ and $\beta$. 
 
-![The velocity field around some wings designed using fixed $c = 1$, $\lambda = 0.9$, and different values of $\alpha$ and $\beta$. The lift for wings are shown below each plot.](velocity-field.png)
+![The velocity field around some wings designed using fixed $c = 1$, $\lambda = 0.9$, and different values of $\alpha$ and $\beta$. The lift for wings are shown below each plot.](images/velocity-field.png)
 
 
 The expression for the lift of the wing indicates that the relationship between the lift and parameters $\alpha$ and $\beta$ is a sine function. 
 
-![The lift for the wing computed using different value of $\alpha$ and $\beta$.](lift.png)
+![The lift for the wing computed using different value of $\alpha$ and $\beta$.](images/lift.png)
 
 We can deduce from the plot that the lift is at maximum when $\alpha + \beta = \pi/2$.
 

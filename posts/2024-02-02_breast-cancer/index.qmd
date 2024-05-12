@@ -3,7 +3,7 @@ title: "Classification of the Breast Cancer Wisconsin Data Set"
 author: "Ashlynn Lu"
 date: "2024-02-02"
 categories: [analysis]
-image: "distribution.png"
+image: "images/distribution.png"
 format: 
   html:
     toc: true
@@ -16,13 +16,13 @@ We will use three classifiers to classify whether a breast mass is malignant or 
 
 ## Exploratory Data Analysis
 
-![A plot of histograms showing the distribution of the observations of each of the 30 covariates for both categories (blue for malignant (M) and orange for benign (B)).](distribution.png)
+![A plot of histograms showing the distribution of the observations of each of the 30 covariates for both categories (blue for malignant (M) and orange for benign (B)).](images/distribution.png)
 
 The distribution plot shows that most of the mean values of the features are approximately normally distributed, while some of the variables, especially the standard error terms (denoted in the pattern \`feature se') have skewed distribution. We can also inspect that some of the covariates have significantly different distributions for the different diagnosis results, such as mean radius, mean perimeter, mean area, mean compactness, mean concavity, and mean concave points.
 
 We should also briefly examine the correlation between the features to do the classification using naive Bayes classifier since it assumes conditional independence. Intuitively, we may think that perimeter and area should be highly correlated with the radius of the breast masses. The heatmap below agrees with our opinion.
 
-![A heatmap showing the correlation between features.](heatmap.png)
+![A heatmap showing the correlation between features.](images/heatmap.png){width="562"}
 
 ## Classification
 
@@ -32,17 +32,19 @@ To compare the performance of three classifiers and assess their stability acros
 
 These procedures are done by using package `sklearn`. We use `StratifiedKFold` for the cross-validation, `LogisticRegression`, `KNeighborsClassifier`, `GaussianNB` for the classification model, and `cross_val_score` to assess the accuracy and stability. We choose $K=3$, $K=5$, and $K=7$ for the numbers of neighbours for the k-nearest neighbours classifier.
 
-![The mean accuracy score and standard deviation for the three classifiers, Logistic regression, KNN (for the number of neighbours = 3, 5, 7), and Naive Bayes.](table.png)
+![The mean accuracy score and standard deviation for the three classifiers, Logistic regression, KNN (for the number of neighbours = 3, 5, 7), and Naive Bayes.](images/table.png){width="497"}
 
 The table above shows the performance of each classifier. We can see that the accuracy is all greater than 0.90 with a small standard deviation around 0.015, which shows that the three classifiers are accurate. Also, for the KNN classifier, the result shows that the mean accuracy is the largest when $K=3$.
 
 We repeat the entire k-fold cross-validation process 10 times across different random training/test set divisions for stability assessment. The figure below shows that the performance of all the classifiers is stable across different training/test set divisions, with the logistic regression classifier having the highest accuracy, and Naive Bayes having the lowest accuracy across all 10 iterations. The lower accuracy for the Naive Bayes may be because of the correlated features in the dataset. We can see that the performances of all three KNN classifiers are similar. We will choose $K=3$ for further analysis when using KNN.
 
-![A plot showing the accuracy for the three classifiers for 10 different training/test set divisions.](accuracy.png)
+![A plot showing the accuracy for the three classifiers for 10 different training/test set divisions.](images/accuracy.png)
+
+## Cost
 
 Suppose that wrongly classifying a breast mass as benign (false negative) has a cost of 100 while wrongly classifying a breast mass as malignant (false positive) has a cost of 5. We divide the dataset into 20-80 train-test sets, train the three models on the training set, and compute the classification costs using the test set. For each classifier, we plot the classification cost on a test set associated with different decision thresholds (from 0 to 1). Choosing a high threshold typically results in a higher precision (fewer false positives) but a lower recall (more false negatives) because the model is more selective in labeling instances as positive.
 
-![A plot showing the classification cost on a test set associated with different decision thresholds](cost.png)
+![A plot showing the classification cost on a test set associated with different decision thresholds](images/cost.png)
 
 We can see that the classification costs for the three methods are slightly increasing for increasing thresholds. The costs are approximately lower than 600 for the KNN and Naive Bayes classifiers for all possible threshold values. The cost for logistic regression is the lowest among the three classifiers when the threshold is smaller than 0.8, but the cost increases rapidly when the threshold is larger than 0.8.
 

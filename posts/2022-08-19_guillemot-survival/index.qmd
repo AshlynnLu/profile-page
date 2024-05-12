@@ -39,7 +39,7 @@ individual is not observed two options are possible: (i) it is dead, or
 be addressed using the capture-mark-recapture (CMR) method.
 
 CMR methods use data collection protocols where observers go into the
-field at a series of capture events, denoted t = 1, . . . , T. At each
+field at a series of capture events, denoted $t = 1, . . . , T$. At each
 capture event, the observer marks the new individuals, records all
 observed individuals (already marked) and releases them back into the
 population. This leads to data corresponding to the capture history of
@@ -48,16 +48,17 @@ or not.
 
 A capture history or capture-recapture takes the form of a vector of
 length the number of encounter occasions $T$, and records the value 1
-for a live encounter and 0 when an individual was not encountered. This
-data set also contains the sex of each individual as an additional
-information. The main interest in this project is to estimate the main
-parameters, which are the recapture and the apparent survival
-probabilities. The survival probabilities, denoted by $\phi_t$,
-represent the probability of that an individual is alive at time $t$ and
-survives until time $t+1$ (for time $t = 1, ..., T-1$, for all
-individuals). Similarly, the recapture probabilities, denoted by $p_t$
-represent the probability of observing an individual at time $t$ (from
-$t = 2, ..., T$ and for all individuals).
+for a live encounter and 0 when an individual was not encountered. For
+example, an record of length $T=4$ with entries (1, 1, 0, 1) means the individual was observed at $t = 1, 2, 4$, while was not
+observed at $t = 3$. This data set also contains the sex of each
+individual as an additional information. The main interest in this
+project is to estimate the main parameters, which are the recapture and
+the apparent survival probabilities. The survival probabilities, denoted
+by $\phi_t$, represent the probability of that an individual is alive at
+time $t$ and survives until time $t+1$ (for time $t = 1, ..., T-1$, for
+all individuals). Similarly, the recapture probabilities, denoted by
+$p_t$ represent the probability of observing an individual at time $t$
+(from $t = 2, ..., T$ and for all individuals).
 
 We use $p_t$ to denote the recapture probability at occasion $t$, ang
 $\phi_t$ to denote the apparent survival probability between occasion
@@ -78,13 +79,13 @@ population which in turn may aid in their management and conservation.
 library(tidyverse)
 ```
 
-```{r code=readLines("functions/functions.R"), eval=TRUE, echo=FALSE}
+```{r code=readLines("src/helper-functions/functions.R"), eval=TRUE, echo=FALSE}
 # Load function definitions
-source("functions/functions.R")
+source("src/helper-functions/functions.R")
 ```
 
 ```{r data, echo = FALSE}
-load(file = "data/CR.sex.chicks09.RData")
+load(file = "data/raw/CR.sex.chicks09.RData")
 ```
 
 In the next table, and for simplicity, we present a subset of the data,
@@ -273,7 +274,7 @@ opt.constant <- optim(par = c(1, 1),
 ```
 
 ```{r MLE-constant, echo = FALSE}
-MLE.constant <- readRDS(file = "data/MLE.constant.rds")
+MLE.constant <- readRDS(file = "data/derived/MLE.constant.rds")
 knitr::kable(MLE.constant)
 ```
 
@@ -317,7 +318,7 @@ likelihood for this model.
 The estimates for $p$ and $\phi$ depends on sex are shown below.
 
 ```{r params-sex, echo = FALSE}
-MLE.sex <- readRDS(file = "data/MLE.sex.rds")
+MLE.sex <- readRDS(file = "data/derived/MLE.sex.rds")
 knitr::kable(MLE.sex)
 ```
 
@@ -390,7 +391,7 @@ the survival probability until 2 year old. Define functions
 The estimate for each model is shown below.
 
 ```{r MLE-age, echo = FALSE}
-MLE.age <- readRDS(file = "data/MLE.age.rds")
+MLE.age <- readRDS(file = "data/derived/MLE.age.rds")
 knitr::kable(MLE.age)
 ```
 
@@ -411,7 +412,7 @@ smallest AIC value is preferred.
 Compute the AIC for each model, the result is shown below
 
 ```{r AIC-age, echo = FALSE}
-AIC.age <- readRDS(file = "data/AIC.age.rds")
+AIC.age <- readRDS(file = "data/derived/AIC.age.rds")
 knitr::kable(AIC.age)
 ```
 
@@ -441,14 +442,14 @@ We use the same approach as before, define three functions
 the result for each model shows below.
 
 ```{r MLE-table, echo = FALSE}
-MLE.age.sex <- readRDS(file = "data/MLE.age.sex.rds")
+MLE.age.sex <- readRDS(file = "data/derived/MLE.age.sex.rds")
 knitr::kable(MLE.age.sex)
 ```
 
 Compute the AIC for each model.
 
 ```{r AIC-age-sex, echo = FALSE}
-AIC.age.sex <- readRDS(file = "data/AIC.age.sex.rds")
+AIC.age.sex <- readRDS(file = "data/derived/AIC.age.sex.rds")
 colnames(AIC.age.sex) <- "AIC"
 knitr::kable(AIC.age.sex)
 ```
@@ -475,7 +476,7 @@ likelihood function for each model and then use `optim` to find the MLE.
 We then compute the AIC of each model with the following results,
 
 ```{r model-AIC, echo = FALSE}
-model.selection <- readRDS(file = "data/model.selection.rds")
+model.selection <- readRDS(file = "data/derived/model.selection.rds")
 knitr::kable(data.frame(model.selection))
 ```
 
@@ -485,7 +486,7 @@ probabilities for 5 years old males and females, the estimate of the
 parameters are shown below.
 
 ```{r params, echo = FALSE}
-params <- readRDS(file = "data/params.rds")
+params <- readRDS(file = "data/derived/params.rds")
 knitr::kable(data.frame(params))
 ```
 

@@ -9,13 +9,13 @@ In Colorado, cannabis has been legal for medical use since 2000 and for recreati
 
 The public was expecting to finally see recreational use sales data, and hopefully, that could match the historical sales before the legalisation. Thanks to the documented sales data from the legal sellers, we can now finally have a quantitative glance into the sale of this special and controversial good.
 
-![](total-sales-line-plot.png){width="595"}
+![](images/total-sales-line-plot.png){width="595"}
 
 It is not surprising to see that retail sales quickly overtake the majority of total sales and became nearly twice the medical sales in less than 5 years time. This shows a graduate market acceptance for recreational use sales, which is expected considering its past crime-related nature. Now, recreational sales are dominating the total sales and are likely to stay in this position for the foreseeable future.
 
-![](total-sales-bar-plot.png){width="290"}
+![](images/total-sales-bar-plot.png){width="290"}
 
-![](county-sales-donut-chart.png){width="595"}
+![](images/county-sales-donut-chart.png){width="595"}
 
 The intention of the legalisation is to regulate and monitor the market, the active legal market proves that it has been achieved to some extent. However, another question remains, that is 'does total legalisation bring easier access to addictive goods for the public and do more damage than credit?'. This policy stays as controversial as cannabis itself.
 

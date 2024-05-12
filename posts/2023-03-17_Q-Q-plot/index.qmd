@@ -3,7 +3,7 @@ title: "Interactive Q-Q Plot"
 author: "Ashlynn Lu"
 date: "2023-03-17"
 categories: [data visualisation, interactive plots]
-image: "example.jpg"
+image: "images/example.jpg"
 format: 
   html:
     toc: true
@@ -34,10 +34,13 @@ One well-known statistical tests for normality is the Shapiro–Wilk (SW) test. 
 
 However, the numerical test will sometimes give misleading results. Below shows a Q-Q plot using a sample with size $n = 30$ of data generated from the standard normal distribution.
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, message=FALSE}
 library(ggplot2)
 library(dplyr)
+```
 
+
+```{r, echo=FALSE}
 set.seed(12332)
 n <- 30
 norm <- data.frame(x = rnorm(n))
