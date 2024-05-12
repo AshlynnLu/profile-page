@@ -57,3 +57,4 @@ Clone or download this repo.
 
 The webpage can be preview locally by running 'quarto preview "./index.qmd"' in terminal.
 
+*For privacy issue I change my profile photo to my cat;)*
