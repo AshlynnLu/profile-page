@@ -48,7 +48,7 @@ This directory contains the figures used in each article, and the code used to p
 
 ## photo/
 
-This directory contains my photography shown in 'Photo' page. Format can be found in [photo.qmd](photo.qmd).
+This directory contains my photography shown in 'Photo' page. Format can be found in [photo.qmd](photo.qmd). The [lightbox extension](https://github.com/quarto-ext/lightbox) is used for the layout.
 
 
 ## To reproduce
