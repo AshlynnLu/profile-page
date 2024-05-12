@@ -1,5 +1,11 @@
 ## About This Repo 
 
+<!-- badges: start -->
+[![License](https://img.shields.io/github/license/mcanouil/mickael.canouil.fr)](LICENSE)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6cd93e0e-b6cc-4e0c-900a-e0c09f7c1ec0/deploy-status)](https://app.netlify.com/sites/ashlynnlu/deploys)
+<!-- badges: end -->
+
+
 Hi! This repository contains the code for my personal website, built using [Quarto](https://quarto.org). 
 
 The website is developed with [Netlify](https://app.netlify.com/), hosted at [ashlynnlu.netlify.app](https://ashlynnlu.netlify.app).
@@ -57,4 +63,4 @@ Clone or download this repo.
 
 The webpage can be preview locally by running **quarto preview "./index.qmd"** in terminal.
 
-*For privacy issue I change my profile photo to my cat;)*
+*For privacy issue I change my profile photo to my cat ;)*
