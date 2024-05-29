@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Ashlynn Lu - Research</title>
+<title>Ashlynn Lu</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -68,73 +66,15 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -149,7 +89,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./writing.html" aria-current="page"> 
+    <a class="nav-link" href="./writing.html"> 
 <span class="menu-text">Writing</span></a>
   </li>  
   <li class="nav-item">
@@ -187,256 +127,27 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Research</h1>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta column-page-left">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="analysis">analysis <span class="quarto-category-count">(4)</span></div><div class="category" data-category="article">article <span class="quarto-category-count">(1)</span></div><div class="category" data-category="data visualisation">data visualisation <span class="quarto-category-count">(2)</span></div><div class="category" data-category="fluid mechanics">fluid mechanics <span class="quarto-category-count">(2)</span></div><div class="category" data-category="interactive plots">interactive plots <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 
 
 
+<section id="mit-license" class="level1">
+<h1>MIT License</h1>
+<p>Copyright (c) 2024 Ashlynn Lu</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 
 
+</section>
 
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="data visualisation,article" data-listing-date-sort="1708473600000" data-listing-file-modified-sort="1715512363773" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="232">
-<div class="thumbnail">
-<p><a href="./posts/2024-02-21_cannabis-sales/index.html" class="no-external"></a></p><a href="./posts/2024-02-21_cannabis-sales/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/2024-02-21_cannabis-sales/images/total-sales-line-plot.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/2024-02-21_cannabis-sales/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-02-21_cannabis-sales/index.html" class="no-external">Colorado Legal Cannabis Sales Report</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-02-21_cannabis-sales/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('data visualisation'); return false;">
-data visualisation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('article'); return false;">
-article
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-02-21_cannabis-sales/index.html" class="no-external">In Colorado, cannabis has been legal for medical use since 2000 and for recreational use since late 2012.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-02-21_cannabis-sales/index.html" class="no-external">
-<div class="listing-date">
-Feb 21, 2024
-</div>
-<div class="listing-author">
-Ashlynn Lu
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="analysis" data-listing-date-sort="1706832000000" data-listing-file-modified-sort="1715515567826" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="953">
-<div class="thumbnail">
-<p><a href="./posts/2024-02-02_breast-cancer/index.html" class="no-external"></a></p><a href="./posts/2024-02-02_breast-cancer/index.html" class="no-external">
-<p><img src="./posts/2024-02-02_breast-cancer/images/distribution.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/2024-02-02_breast-cancer/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-02-02_breast-cancer/index.html" class="no-external">Classification of the Breast Cancer Wisconsin Data Set</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-02-02_breast-cancer/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('analysis'); return false;">
-analysis
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-02-02_breast-cancer/index.html" class="no-external">In this article, we explore into the Breast Cancer Wisconsin Data Set, a comprehensive compilation of 30 features from 569 breast masses, aimed at distinguishing malignant…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-02-02_breast-cancer/index.html" class="no-external">
-<div class="listing-date">
-Feb 2, 2024
-</div>
-<div class="listing-author">
-Ashlynn Lu
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="analysis,fluid mechanics" data-listing-date-sort="1681167600000" data-listing-file-modified-sort="1715515566745" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="854">
-<div class="thumbnail">
-<p><a href="./posts/2023-04-11_boundary-layer/index.html" class="no-external"></a></p><a href="./posts/2023-04-11_boundary-layer/index.html" class="no-external">
-<p><img src="./posts/2023-04-11_boundary-layer/images/half-plane.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/2023-04-11_boundary-layer/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2023-04-11_boundary-layer/index.html" class="no-external">the Boundary Layer Developing when a Uniform Flow Impinges on a Half-Plane</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2023-04-11_boundary-layer/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('analysis'); return false;">
-analysis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('fluid mechanics'); return false;">
-fluid mechanics
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2023-04-11_boundary-layer/index.html" class="no-external">Analysing the boundary layer developing when a uniform flow impinges on a half-plane by approximating the Navier-Stokes equation and divergence-free conditions, and derived…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2023-04-11_boundary-layer/index.html" class="no-external">
-<div class="listing-date">
-Apr 11, 2023
-</div>
-<div class="listing-author">
-Ashlynn Lu
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="data visualisation,interactive plots" data-listing-date-sort="1679011200000" data-listing-file-modified-sort="1716983460049" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="791">
-<div class="thumbnail">
-<p><a href="./posts/2023-03-17_Q-Q-plot/index.html" class="no-external"></a></p><a href="./posts/2023-03-17_Q-Q-plot/index.html" class="no-external">
-<p><img src="./posts/2023-03-17_Q-Q-plot/images/example.jpg" class="thumbnail-image"></p>
-</a><p><a href="./posts/2023-03-17_Q-Q-plot/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2023-03-17_Q-Q-plot/index.html" class="no-external">Subjective Interpretation of Statistical Information via the Use of Q-Q plot</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2023-03-17_Q-Q-plot/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('data visualisation'); return false;">
-data visualisation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('interactive plots'); return false;">
-interactive plots
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2023-03-17_Q-Q-plot/index.html" class="no-external">Data visualization plays a significant role in data analysis. It is a process of transforming large amounts of complex numerical data into more manageable visual…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2023-03-17_Q-Q-plot/index.html" class="no-external">
-<div class="listing-date">
-Mar 17, 2023
-</div>
-<div class="listing-author">
-Ashlynn Lu
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="analysis,fluid mechanics" data-listing-date-sort="1676419200000" data-listing-file-modified-sort="1715510239154" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1134">
-<div class="thumbnail">
-<p><a href="./posts/2023-02-15_potential-flows/index.html" class="no-external"></a></p><a href="./posts/2023-02-15_potential-flows/index.html" class="no-external">
-<p><img src="./posts/2023-02-15_potential-flows/images/wing-with-flow.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/2023-02-15_potential-flows/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2023-02-15_potential-flows/index.html" class="no-external">Complex Analysis Method for Potential Flows and the Resulting Lift</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2023-02-15_potential-flows/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('analysis'); return false;">
-analysis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('fluid mechanics'); return false;">
-fluid mechanics
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2023-02-15_potential-flows/index.html" class="no-external">we are going to use complex-variable methods to compute two-dimensional irrotational flows of inviscid incompressible fluids around objects. We can use complex mappings to…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2023-02-15_potential-flows/index.html" class="no-external">
-<div class="listing-date">
-Feb 15, 2023
-</div>
-<div class="listing-author">
-Ashlynn Lu
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="analysis" data-listing-date-sort="1660863600000" data-listing-file-modified-sort="1715515801875" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2970">
-<div class="thumbnail">
-<p><a href="./posts/2022-08-19_guillemot-survival/index.html" class="no-external"></a></p><a href="./posts/2022-08-19_guillemot-survival/index.html" class="no-external">
-<p><img src="./posts/2022-08-19_guillemot-survival/images/guillemot.jpg" class="thumbnail-image"></p>
-</a><p><a href="./posts/2022-08-19_guillemot-survival/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2022-08-19_guillemot-survival/index.html" class="no-external">Investigating the impact of age and sex on guillemot survival</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2022-08-19_guillemot-survival/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('analysis'); return false;">
-analysis
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2022-08-19_guillemot-survival/index.html" class="no-external">The project is motivated by a capture-recapture dataset from the largest colony of common guillemot in the Baltic Sea, Stora Karlsö. Data were recorded from 2009 to 2021.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2022-08-19_guillemot-survival/index.html" class="no-external">
-<div class="listing-date">
-Aug 19, 2022
-</div>
-<div class="listing-author">
-Ashlynn Lu
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -827,7 +538,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/AshlynnLu/profile-page/edit/main/writing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AshlynnLu/profile-page/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/AshlynnLu/profile-page/edit/main/LICENSE.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AshlynnLu/profile-page/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
